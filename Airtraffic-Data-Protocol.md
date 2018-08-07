@@ -421,6 +421,6 @@ This protocol assumes that every data transmitted is a complete object that has 
 ## Open Issues
 Currently there are a few open issues and they are tracked using the issues section in this repository, please open new issues if you want to comment or have concerns about the protocol, the key ones that address the appendix section above are below and your suggestions / contributions are welcome. Please add additional comments on the issue itself or suggest merge requests: 
 
-1. Source GUID being adequate for all current and future sensors ([link](https://bitbucket.org/hrishiballal/airtraffic-data-protocol-development/issues/1/find-a-replacement-for-sourceguid))
-2. Transmission issues around metered and unmetered connections ([link](https://bitbucket.org/hrishiballal/airtraffic-data-protocol-development/issues/5/unmetered-connections-metered-connections))
-3. Investigate if GPS is accurate enough for drone operations ([link](https://bitbucket.org/hrishiballal/airtraffic-data-protocol-development/issues/4/investigate-nic-nac-accuracy))
+1. Source GUID being adequate for all current and future sensors ([link](https://github.com/hrishiballal/airtraffic-data-protocol-development/issues/1))
+2. Transmission issues around metered and unmetered connections ([link](https://github.com/hrishiballal/airtraffic-data-protocol-development/issues/2))
+3. Investigate if GPS is accurate enough for drone operations ([link](https://github.com/hrishiballal/airtraffic-data-protocol-development/issues/4))
