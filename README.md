@@ -1,6 +1,6 @@
 # README #
 
-This is the development version of a new Airtraffic Data protocol. 
+This is the development version of a new Airtraffic Data Protocol. 
 
 
 ### Goals ###
