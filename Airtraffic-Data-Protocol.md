@@ -1,4 +1,19 @@
 # Air Traffic Data Protocol
+- [Air Traffic Data Protocol](#air-traffic-data-protocol)
+	- [Objective](#objective)
+	- [Scope](#scope)
+	- [Data Sources](#data-sources)
+	- [Stakeholders](#stakeholders)
+	- [Sample Traffic Object](#sample-traffic-object)
+	- [Sample Source status Object](#sample-source-status-object)
+	- [Data Specifications](#data-specifications)
+		- [Traffic Object Details](#traffic-object-details)
+		- [Status Object Details](#status-object-details)
+	- [Appendix](#appendix)
+		- [Data Verbosity](#data-verbosity)
+		- [Push vs Pull](#push-vs-pull)
+		- [Full Object vs Deltas](#full-object-vs-deltas)
+	- [Open Issues](#open-issues)
 
 ## Objective 
 As UTM moves into it's next phase of evolution, the challenges around integrating unmanned aviation with manned and other entities sharing the sky becomes critical. Air traffic data is sensed using different sensors and have different capabilities, technologies and data formats that need to be reconciled. Therefore the core objective of this reporting standard is the following: 
