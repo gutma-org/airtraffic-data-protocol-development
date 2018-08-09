@@ -162,7 +162,7 @@ All sensors should provide a status on its own health and basic information abou
 | estimatedErrorHdg | %f | Estimated Error in Heading in decimal degrees |
 | estimatedErrorVel | %d | Estimated error in Velocity |
 | estimatedErrorVerVel | %d | Estimated error in Vertical Velocity |
-||| |
+
 
 
 A field called Detail can be added for extra information for each of the aircraft object if avaialble. 
@@ -194,7 +194,7 @@ A field called Detail can be added for extra information for each of the aircraf
 |addressQualifier | %d | Defines the type of target that delivered the data <br> 0 = ADS-B target with ICAO 24-bit <br> 1 = Reserved for National use <br> 2 = TIS-B target with ICAO 24-bit address <br> 3 = TIS-B target with track file identifier <br> 4 = Surface Vehicle <br> 5 = Fixed ADS-B Beacon <br> 6 = (Reserved) <br> 7 = (Reserved) |
 | uatMopsVersion | %d |1 = DO-282A<br> 2 = DO-282B |
 | callSignID | %d | 0 = Fightplan <br> 1 = CallSign |
-||| |
+
 
 ### Status Object Details
 
@@ -211,7 +211,7 @@ A field called Detail can be added for extra information for each of the aircraf
 | sourceAltMM | %d |  Altitude in mm |
 | gpsStatus | %d | The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
 | receiverStatus | %d | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
-||| |
+
 
 
 ## Appendix
