@@ -148,9 +148,7 @@ All sensors should provide a status on its own health and basic information abou
 | horVelocityCMS | %lu | Horizontal velocity in centimeters/sec |
 | verVelocityCMS | %ld | Vertical velocity in centimeters/sec with positive being up |
 | squawk | %d | Transponder code |
-| altitudeType | %d | Altitude Source |  |
-|||0 = Pressure   |
-|||1 = Geometric |
+| altitudeType | %d | Altitude Source | 0 = Pressure <br> 1 = Geometric |
 | callSign | %c%c%c%c %c%c%c%c | Callsign |
 | emitterType | %d | Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
 | sequenceNumber   | %d | Auto incrementing packet sequence number |
@@ -177,9 +175,7 @@ A field called Detail can be added for extra information for each of the aircraf
 | emergencyStatus | %d | Emergency status <br> 0 = No-Emergency <br> 1 = General Emergency <br> 2 = Lifeguard/Medical <br> 3 = Min Fuel <br> 4 = No Comm <br> 5 = Unlawful Interference <br> 6 = Downed Aircraft |
 | sysIntegrityLevel | %d | System Integrity Level (SIL) |
 | airGroundState | %d | Airborne or ground <br> 0 = Airborne subsonic condition <br> 1 = Airborne supersonic condition <br> 2 = On ground condition |
-||| |
 | svHeadingType | %d | Track angle from heading <br> 0 = Data Not Available <br> 2 = Magnetic Heading <br> 3 = True Heading |
-||| |
 | verticalVelType | %d | Vertical rate information <br> 0 = Pressure <br> 1 = Geometric |
 | navPostionAccuracy | %d | The reported State Vector has sufficient position accuracy for the intended use (NACp) <br> 0  = EPU &gt;= 18.52 km (10 NM) <br> 1  = EPU &lt; 18.52 km (10 NM) <br> 2  = EPU &lt; 7.408 km (4 NM) <br> 3  = EPU &lt; 3.704 km (2 NM) <br> 4  = EPU &lt; 1852 m (1NM) <br> 5  = EPU &lt; 926 m (0.5 NM) <br> 6  = EPU &lt; 555.6 m (0.3 NM) <br> 7  = EPU &lt; 185.2 m (0.1 NM) <br> 8  = EPU &lt; 92.6 m (0.05 NM) <br> 9  = EPU &lt; 30 m and VEPU &lt; 45 m <br> 10 = EPU &lt; 10 m and VEPU &lt; 15 m <br> 11 = EPU &lt; 3 m and VEPU &lt; 4 m <br> 12 = (Reserved) <br> 13 = (Reserved) <br> 14 = (Reserved) <br> 15 = (Reserved) |
 | navVelocityAccuracy | %d | The least accurate velocity component being transmitted (NACv) <br> 0 = Unknown or &gt;= 10 m/s Unknown or &gt;= 50 feet (15.24 m) per second |<br> 1 = &lt; 10 m/s &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s &lt; 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved)|
