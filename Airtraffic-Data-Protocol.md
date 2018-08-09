@@ -141,17 +141,7 @@ All sensors should provide a status on its own health and basic information abou
 | :--- | :---: | :--- |
 | icaoAddress | %02X%02X%02X | ICAO 24-bit address |
 ||| |
-| trafficSource | %d | 0 = 1090ES |
-|||1 = UAT |
-|||2 = Multi-radar (MRT)|
-|||3 = MLAT |
-|||4 = SSR |
-|||5 = PSR |
-|||6 = Mode-S |
-|||7 = MRT |
-|||8 = SSR + PSR Fused |
-|||9 = ADS-B |
-||| |
+| trafficSource | %d | 0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
 | latDD | %f | Latitude expressed as decimal degrees |
 ||| |
 | lonDD | %f | Longitude expressed as decimal degrees |
