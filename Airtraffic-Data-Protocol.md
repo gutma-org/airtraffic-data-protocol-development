@@ -140,67 +140,29 @@ All sensors should provide a status on its own health and basic information abou
 | Field Name   | Data Type | Description |
 | :--- | :---: | :--- |
 | icaoAddress | %02X%02X%02X | ICAO 24-bit address |
-||| |
 | trafficSource | %d | 0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
 | latDD | %f | Latitude expressed as decimal degrees |
-||| |
 | lonDD | %f | Longitude expressed as decimal degrees |
-||| |
 | altitudeMM | %ld | Geometric altitude or barometric pressure altitude in millimeters |
-||| |
 | headingDE2 | %d | Course over ground in centi-degrees |
 | horVelocityCMS | %lu | Horizontal velocity in centimeters/sec |
-||| |
 | verVelocityCMS | %ld | Vertical velocity in centimeters/sec with positive being up |
-||| |
 | squawk | %d | Transponder code |
-||| |
 | altitudeType | %d | Altitude Source |  |
 |||0 = Pressure   |
 |||1 = Geometric |
 | callSign | %c%c%c%c %c%c%c%c | Callsign |
-||| |
-| emitterType | %d | Category type of the emitter   |
-|||0 = No aircraft type information |
-|||1 = Light (ICAO) &lt; 15,500 lbs  |
-|||2 = Small - 15,500 to 75,000 lbs |
-|||3 = Large - 75,000 to 300,000 lbs |
-|||4 = High Vortex Large (e.g., B757) |
-|||5 = Heavy (ICAO) - &gt; 300,000 lbs |
-|||6 = Highly Maneuverable &gt; 5G acceleration and high speed |
-|||7 = Rotocraft |
-|||8 = Glider/sailplane  |
-|||9 = Lighter than air |
-|||10 = Parachutist/sky diver |
-|||11 = Ultra light/hang glider/paraglider |
-|||12 = Unmanned aerial vehicle |
-|||13 = Space/trans-atmospheric vehicle |
-|||14 = Surface vehicle-emergency vehicle |
-|||15 = Surface vehicle-service vehicle |
-|||16 = Point Obstacle (includes tethered balloons) |
-|||17 = Cluster Obstacle |
-|||18 = Line Obstacle |
-||| |
+| emitterType | %d | Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
 | sequenceNumber   | %d | Auto incrementing packet sequence number |
-||| |
 | sourceGuid | %02x%02x%02x%02x %02x%02x%02x%02x | Unique source/equipment Identifier |
-||| |
 | utcSync | %d | UTC time flag |
-||| |
 | timeStamp | %s | Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDTHH:mm:ss:ffffffffZ |
-||| |
 | processingDelay | %d | Delay in processing:  the difference when the data was received and published. In milli-seconds. |
-||| |
 | estimatedErrorLat | %f | Estimated error in latitude in decimal degrees |
-||| |
 | estimatedErrorLon | %f | Estimated error in longitude in decimal degrees |
-||| |
 | estimatedErrorAlt | %f | Estimated error in Altitude in meters |
-||| |
 | estimatedErrorHdg | %f | Estimated Error in Heading in decimal degrees |
-||| |
 | estimatedErrorVel | %d | Estimated error in Velocity |
-||| |
 | estimatedErrorVerVel | %d | Estimated error in Vertical Velocity |
 ||| |
 
@@ -209,145 +171,33 @@ A field called Detail can be added for extra information for each of the aircraf
 
 | Field Name | Data Type | Description |
 | :--- | :---: | :--- |
-| navIntegrity | %d | Navigation integrity category (NIC)  |
-|||0  = RC &gt;=37.04 km (20 NM) Unknown Integrity |
-|||1  = RC &lt; 37.04 km (20 NM) RNP-10 containment radius |
-|||2  = RC &lt; 14.816 km (8 NM) RNP-4 containment radius |
-|||3  = RC &lt; 7.408 km (4 NM) RNP-2 containment radius |
-|||4  = RC &lt; 3.704 km (2 NM) RNP-1 containment radius |
-|||5  = RC &lt; 1852 m (1 NM) RNP-0.5 containment radius |
-|||6  = RC &lt; 1111.2 m (0.6 NM) RNP-0.3 containment radius |
-|||7  = RC &lt; 370.4 m (0.2 NM) RNP-0.1 containment radius |
-|||8  = RC &lt; 185.2 m (0.1 NM) RNP-0.05 containment radius |
-|||9  = RC &lt; 75 m and VPL &lt; 112 m e.g., SBAS, HPL, VPL |
-|||10 = RC &lt; 25 m and VPL &lt; 37.5 m e.g., SBAS, HPL, VPL |
-|||11 = RC &lt; 7.5 m and VPL &lt; 11 m e.g., GBAS, HPL, VPL |
-|||12 = (Reserved) (Reserved) |
-|||13 = (Reserved) (Reserved) |
-||| 14 = (Reserved) (Reserved) |
-|||15 = (Reserved) (Reserved) |
-||| |
-| navAccuracy | %d | Navigation accuracy category (NACv)  |
-|||0 = Unknown or &gt;= 10 m/s Unknown &gt;= 50 feet (15.24 m) per second |
-|||1 = &lt; 10 m/s  &lt; 50 feet (15.24 m) per second |
-|||2 = &lt; 3 m/s < 15 feet (4.57 m) per second |
-|||3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second |
-|||4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second |
-|||5 = (Reserved) (Reserved) |
-|||6 = (Reserved) (Reserved) |
-|||7 = (Reserved) (Reserved) |
-||| |
-| verVelocitySrc | %d | Vertical velocity source |
-|||0 = Pressure |
-|||1 = Geometric |
-||| |
-| emergencyStatus | %d | Emergency status |
-||| 0 = No-Emergency |
-|||1 = General Emergency |
-|||2 = Lifeguard/Medical |
-|||3 = Min Fuel  |
-|||4 = No Comm |
-|||5 = Unlawful Interference |
-|||6 = Downed Aircraft |
-||| |
+| navIntegrity | %d | Navigation integrity category (NIC) <br> 0  = RC &gt;=37.04 km (20 NM) Unknown Integrity <br> 1  = RC &lt; 37.04 km (20 NM) RNP-10 containment radius <br> 2  = RC &lt; 14.816 km (8 NM) RNP-4 containment radius <br> 3  = RC &lt; 7.408 km (4 NM) RNP-2 containment radius <br> 4  = RC &lt; 3.704 km (2 NM) RNP-1 containment radius <br> 5  = RC &lt; 1852 m (1 NM) RNP-0.5 containment radius <br> 6  = RC &lt; 1111.2 m (0.6 NM) RNP-0.3 containment radius <br> 7  = RC &lt; 370.4 m (0.2 NM) RNP-0.1 containment radius <br> 8  = RC &lt; 185.2 m (0.1 NM) RNP-0.05 containment radius <br> 9  = RC &lt; 75 m and VPL &lt; 112 m e.g., SBAS, HPL, VPL <br> 10 = RC &lt; 25 m and VPL &lt; 37.5 m e.g., SBAS, HPL, VPL <br> 11 = RC &lt; 7.5 m and VPL &lt; 11 m e.g., GBAS, HPL, VPL <br> 12 = (Reserved) (Reserved) <br> 13 = (Reserved) (Reserved) <br> 14 = (Reserved) (Reserved) <br> 15 = (Reserved) (Reserved) <br> 16 = (Reserved) (Reserved) |
+| navAccuracy | %d | Navigation accuracy category (NACv)  <br> 0 = Unknown or &gt;= 10 m/s Unknown &gt;= 50 feet (15.24 m) per second <br> 1 = &lt; 10 m/s  &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s < 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved) |
+| verVelocitySrc | %d | Vertical velocity source<br> 0 = Pressure <br> 1 = Geometric  |
+| emergencyStatus | %d | Emergency status <br> 0 = No-Emergency <br> 1 = General Emergency <br> 2 = Lifeguard/Medical <br> 3 = Min Fuel <br> 4 = No Comm <br> 5 = Unlawful Interference <br> 6 = Downed Aircraft |
 | sysIntegrityLevel | %d | System Integrity Level (SIL) |
+| airGroundState | %d | Airborne or ground <br> 0 = Airborne subsonic condition <br> 1 = Airborne supersonic condition <br> 2 = On ground condition |
 ||| |
-| airGroundState | %d | Airborne or ground  |
-|||0 = Airborne subsonic condition |
-|||1 = Airborne supersonic condition |
-|||2 = On ground condition |
+| svHeadingType | %d | Track angle from heading <br> 0 = Data Not Available <br> 2 = Magnetic Heading <br> 3 = True Heading |
 ||| |
-| svHeadingType | %d | Track angle from heading |
-|||0 = Data Not Available |
-|||2 = Magnetic Heading  |
-|||3 = True Heading |
-||| |
-| verticalVelType | %d | Vertical rate information |
-|||0 = Pressure |
-|||1 = Geometric |
-||| |
-| navPostionAccuracy | %d | The reported State Vector has sufficient position accuracy for the intended use (NACp) |
-|||0  = EPU &gt;= 18.52 km (10 NM)  |
-|||1  = EPU &lt; 18.52 km (10 NM)  |
-|||2  = EPU &lt; 7.408 km (4 NM) |
-|||3  = EPU &lt; 3.704 km (2 NM) |
-|||4  = EPU &lt; 1852 m (1NM) |
-|||5  = EPU &lt; 926 m (0.5 NM) |
-|||6  = EPU &lt; 555.6 m (0.3 NM) |
-|||7  = EPU &lt; 185.2 m (0.1 NM) |
-|||8  = EPU &lt; 92.6 m (0.05 NM) |
-|||9  = EPU &lt; 30 m and VEPU &lt; 45 m  |
-|||10 = EPU &lt; 10 m and VEPU &lt; 15 m |
-|||11 = EPU &lt; 3 m and VEPU &lt; 4 m |
-|||12 = (Reserved) |
-|||13 = (Reserved) |
-|||14 = (Reserved) |
-|||15 = (Reserved) |
-||| |
-| navVelocityAccuracy | %d | The least accurate velocity component being transmitted (NACv) |
-|||0 = Unknown or &gt;= 10 m/s Unknown or &gt;= 50 feet (15.24 m) per second |
-|||1 = &lt; 10 m/s &lt; 50 feet (15.24 m) per second  |
-|||2 = &lt; 3 m/s &lt; 15 feet (4.57 m) per second |
-|||3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second |
-|||4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second |
-|||5 = (Reserved) (Reserved) |
-|||6 = (Reserved) (Reserved) |
-|||7 = (Reserved) (Reserved) |
-||| |
-| navIntegrityBaro | %d | Barometer checked (NICbaro) |
-|||0 = Barometric Pressure Altitude has NOT been cross checked |
-|||1 = Barometric Pressure Altitude has been cross checked |
-||| |
+| verticalVelType | %d | Vertical rate information <br> 0 = Pressure <br> 1 = Geometric |
+| navPostionAccuracy | %d | The reported State Vector has sufficient position accuracy for the intended use (NACp) <br> 0  = EPU &gt;= 18.52 km (10 NM) <br> 1  = EPU &lt; 18.52 km (10 NM) <br> 2  = EPU &lt; 7.408 km (4 NM) <br> 3  = EPU &lt; 3.704 km (2 NM) <br> 4  = EPU &lt; 1852 m (1NM) <br> 5  = EPU &lt; 926 m (0.5 NM) <br> 6  = EPU &lt; 555.6 m (0.3 NM) <br> 7  = EPU &lt; 185.2 m (0.1 NM) <br> 8  = EPU &lt; 92.6 m (0.05 NM) <br> 9  = EPU &lt; 30 m and VEPU &lt; 45 m <br> 10 = EPU &lt; 10 m and VEPU &lt; 15 m <br> 11 = EPU &lt; 3 m and VEPU &lt; 4 m <br> 12 = (Reserved) <br> 13 = (Reserved) <br> 14 = (Reserved) <br> 15 = (Reserved) |
+| navVelocityAccuracy | %d | The least accurate velocity component being transmitted (NACv) <br> 0 = Unknown or &gt;= 10 m/s Unknown or &gt;= 50 feet (15.24 m) per second |<br> 1 = &lt; 10 m/s &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s &lt; 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved)|
+| navIntegrityBaro | %d | Barometer checked (NICbaro) <br>0 = Barometric Pressure Altitude has NOT been cross checked <br>1 = Barometric Pressure Altitude has been cross checked |
 | tcasAcasOperating | %d | Aircraft is fitted with a TCAS (ACAS) computer and that computer is turned on and operating in a mode that can generate Resolution Advisory (RA) alerts |
-||| |
 | tcasAcasAdvisory | %d | TCAS II or ACAS computer is currently issuing a Resolution Advisory |
-||| |
 | identSwActive | %d | Ident switch is activated |
-||| |
-| atcServicesRecvd | %d | ATC pilot message mode setting |
-|||0 = Not receiving ATC messages |
-|||1 = Receiving ATC messages |
-||| |
-| magHeading | %d | True north or magnetic north |
-|||0 = True north |
-|||1 = Magnetic north |
-||| |
-| utcCoupledCondition | %d | Represents if the Ground Station is UTC-Coupled |
-|||0 = Ground Station is not UTC coupled |
-|||1 = Ground Station is UTC coupled |
-||| |
-| surveilStatus | %d | Surveillance status |
-|||0 = No Condition |
-|||1 = permanent alert |
-|||2 = temp alert |
-|||3 = SPI |
-||| |
-| secondaryAltType | %d | Altitude source |
-|||0 = Pressure |
-|||1 = Geometric |
-||| |
+| atcServicesRecvd | %d | ATC pilot message mode setting <br> 0 = Not receiving ATC messages <br> 1 = Receiving ATC messages |
+| magHeading | %d | True north or magnetic north <br> 0 = True north <br> 1 = Magnetic north |
+| utcCoupledCondition | %d | Represents if the Ground Station is UTC-Coupled <br> 0 = Ground Station is not UTC coupled <br> 1 = Ground Station is UTC coupled |
+| surveilStatus | %d | Surveillance status <br> 0 = No Condition <br> 1 = permanent alert <br> 2 = temp alert <br> 3 = SPI |
+| secondaryAltType | %d | Altitude source <br> 0 = Pressure <br> 1 = Geometric |
 | secondaryAltitudeMM | %ld | Geometric altitude or barometric pressure altitude in millimeters |
-||| |
 | tisBSiteId | %d | The tisBSiteId is unit-less and is from the a transmitted TISb UAT message signifies which uplink tower transmitted the TISb frame |
-||| |
 | transmitMSO | %d | the transmitMSO is the 6bit field from the transmitted UAT message which should signify which MSO the message was transmitted in. MSO&#39;s can range from 0 to 3951 but only transmit the 6 LSB&#39;s of the actual MSO if transmitted. Received range is from 0 - 63. |
-|addressQualifier | %d | Defines the type of target that delivered the data |
-|||0 = ADS-B target with ICAO 24-bit |
-|||1 = Reserved for National use |
-|||2 = TIS-B target with ICAO 24-bit address |
-|||3 = TIS-B target with track file identifier |
-|||4 = Surface Vehicle |
-|||5 = Fixed ADS-B Beacon |
-|||6 = (Reserved) |
-|||7 = (Reserved) |
-||| |
-| uatMopsVersion | %d |  |
-|||1 = DO-282A |
-|||2 = DO-282B |
-||| |
-| callSignID | %d | |
-|||0 = Fightplan |
-|||1 = CallSign |
+|addressQualifier | %d | Defines the type of target that delivered the data <br> 0 = ADS-B target with ICAO 24-bit <br> 1 = Reserved for National use <br> 2 = TIS-B target with ICAO 24-bit address <br> 3 = TIS-B target with track file identifier <br> 4 = Surface Vehicle <br> 5 = Fixed ADS-B Beacon <br> 6 = (Reserved) <br> 7 = (Reserved) |
+| uatMopsVersion | %d |1 = DO-282A<br> 2 = DO-282B |
+| callSignID | %d | 0 = Fightplan <br> 1 = CallSign |
 ||| |
 
 ### Status Object Details
@@ -355,34 +205,16 @@ A field called Detail can be added for extra information for each of the aircraf
 | Field Name | Data Type | Description |
 | :--- | :---: | :--- |
 | sourceGuid | %02x%02x%02x%02x %02x%02x%02x%02x | Unique Station identifier |
-||| |
 | sourceVersionMajor | %d | SOURCE\_MAJOR\_VERSION |
-||| |
 | sourceVersionMinor | %d | SOURCE\_MINOR\_VERSION |
-||| |
 | sourceVersionBuild | %d | SOURCE\_BUILD\_VERSION |
-||| |
 | timeStamp | %s | Time packet was received at the sourceStation ISO 8601 format |
-||| |
 | sourceLatDD | %f | Fixed station latitude expressed as decimal degrees |
-||| |
 | sourceLonDD | %f | Fixed station longitude expressed as decimal degrees |
-||| |
 | sourceAltType | %d | 0 = Barometric Altitude 1 = GNSS Altitude |
-||| |
 | sourceAltMM | %d |  Altitude in mm |
-||| |
-| gpsStatus | %d | The communication and health status of the source GPS |
-|||0 = GPS not present or functioning |
-|||1 = Not locked |
-|||2 = 2D fix |
-|||3 = 3D fix |
-|||4 = DGPS fix |
-||| |
-| receiverStatus | %d | The communication and health status of the sourceStation receiver |
-|||0 = functioning normally |
-|||1 = excessive communication errors |
-|||2 = device not transmitting |
+| gpsStatus | %d | The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
+| receiverStatus | %d | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
 ||| |
 
 
