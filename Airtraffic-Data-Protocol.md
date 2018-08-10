@@ -50,7 +50,7 @@ At this stage the document is primarily aimed at the following stakeholders who 
 Below is a sample traffic object a 1st level sensor records. This object details information about two aircraft in the airspace: 
 
 		{
-		   "aircraft":[
+		   "observations":[
 			  {
 				 "icaoAddress":"39C812",
 				 "trafficSource":0,
