@@ -151,14 +151,15 @@ All sensors should provide a status on its own health and basic information abou
 ## Data Specifications 
 
 ### Traffic Object Details
+\* - Mandatory fields, the rest of fields are nullable. 
 
 | Field Name   | Data Type | Acceptable Value Range |Description |
 | :--- | :---: | :---| :--- |
-| icaoAddress | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
-| trafficSource | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
-| latDD | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
-| lonDD | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
-| altitudeMM | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
+| icaoAddress * | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
+| trafficSource * | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
+| latDD * | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
+| lonDD * | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
+| altitudeMM * | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
 | headingDE2 | %d | 0 to 360 |Course over ground in centi-degrees |
 | horVelocityCMS | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
 | verVelocityCMS | %ld | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
@@ -238,7 +239,8 @@ It can be argued that the structure stated above produces a very verbose JSON. T
 
 A large object can be sent without having to worry about data limits, bandwidth etc. However, if the same data is sent over LTE or other IOT / low bandwidth environments the size of the object becomes a major problem. We anticipate in some cases the sensors will be airborne or the sensor will have a `data plan` associated with it. In such cases it maybe useful to limit the amount of data transmitted so as not to use up bandwidth and also for other reasons like clogging the network and conserving battery. We recommend that at the very least the following fields be transmitted by sensors in a low bandwidth environment. It must be noted that this is not a comprehensive list or a official recommendation.
 
-- icaoAddress
+The Mandatory fields are: 
+- icaoAddress 
 - trafficSource
 - latDD
 - lonDD
