@@ -37,7 +37,7 @@ The following data sources are considered in scope for the purposes of this data
 
 - Aircraft equipped with sensors that detect and produce data (e.g. ADS-B  / Mode S / Primary Radar / Mode AC / FLARM / UAT)
 - Sensors from private companies / 1st level sensors detecting emitted data (e.g. OEM / Radar manufacturers / Sensor manufacturers)
-- UAS / Aircraft itself: In the future all drones will detect neighboring aircraft and share it (Traffic information service � broadcast (TIS-B) collects information and broadcasts it to any aircraft in the region)
+- UAS / Aircraft itself: In the future all drones will detect neighboring aircraft and share it (Traffic information service - broadcast (TIS-B) collects information and broadcasts it to any aircraft in the region)
 
 ## Stakeholders
 At this stage the document is primarily aimed at the following stakeholders who process or utilize this data. 
