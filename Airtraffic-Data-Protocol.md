@@ -9,6 +9,7 @@
 	- [Data Specifications](#data-specifications)
 		- [Traffic Object Details](#traffic-object-details)
 		- [Status Object Details](#status-object-details)
+	- [Traffic Source and Mandatory Fields](#traffic-source-and-mandatory-fields)
 	- [Appendix](#appendix)
 		- [Data Verbosity](#data-verbosity)
 		- [Push vs Pull](#push-vs-pull)
@@ -229,6 +230,25 @@ A field called Detail can be added for extra information for each of the aircraf
 | gpsStatus | %d | 0-4 |The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
 | receiverStatus | %d | 0-2 | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
 
+## Traffic Source and Mandatory Fields
+
+There following table details the mandatory fields required per traffic source, this takes in to account the fact that not all traffic sources can provide all the data: 
+
+| Field Name | Data Type |
+| :--- | :--- |
+|1090ES | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
+| UAT | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
+| Multi-radar (MRT) | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
+| MLAT | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
+| SSR | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
+| PSR | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
+| Mode-S | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
+| MRT | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
+| SSR + PSR Fused | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
+| ADS-B | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
+
+
+
 
 
 ## Appendix
@@ -239,12 +259,6 @@ It can be argued that the structure stated above produces a very verbose JSON. T
 
 A large object can be sent without having to worry about data limits, bandwidth etc. However, if the same data is sent over LTE or other IOT / low bandwidth environments the size of the object becomes a major problem. We anticipate in some cases the sensors will be airborne or the sensor will have a `data plan` associated with it. In such cases it maybe useful to limit the amount of data transmitted so as not to use up bandwidth and also for other reasons like clogging the network and conserving battery. We recommend that at the very least the following fields be transmitted by sensors in a low bandwidth environment. It must be noted that this is not a comprehensive list or a official recommendation.
 
-The Mandatory fields are: 
-- icaoAddress 
-- trafficSource
-- latDD
-- lonDD
-- altitudeMM
 
 ### Push vs Pull
 Similar to the considerations above, there are primarily two models that data can be transmitted, a user requests data from a sensor (pull) and a sensor emits it out over a public interface (push) regardless if someone is asking for it. We anticipate technical challenges when using either of these models in a sensor in the future. For e.g. in a pull model a interested party has to send a request through a HTTP POST or others to get a response with the air-traffic data. But how does one know how many sensors are around to make such queries (discovery). In a push model data is being emitted continuously over publicly documented interfaces so the interested parties have to tune their receivers on that interface to get data. At the moment apart from some protocols like ADS-B, FLARM etc. there is no standard way to sense and receive transmissions. We anticipate that sensor manufacturers will build interfaces unique to their device and there will not be any standard port (e.g. 22 for SSH) that all of them would agree on.
