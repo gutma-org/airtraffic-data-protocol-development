@@ -152,15 +152,16 @@ All sensors should provide a status on its own health and basic information abou
 ## Data Specifications 
 
 ### Traffic Object Details
-\* - Mandatory fields, the rest of fields are nullable. 
+For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](#traffic-source-and-mandatory-fields) section. 
 
 | Field Name   | Data Type | Acceptable Value Range |Description |
 | :--- | :---: | :---| :--- |
-| icaoAddress * | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
-| trafficSource * | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
-| latDD * | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
-| lonDD * | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
-| altitudeMM * | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
+| icaoAddress | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
+| trafficSource | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
+| sourceType | %d | 0-1 |0 = True <br> 1 = Fused <br>|
+| latDD | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
+| lonDD | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
+| altitudeMM | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
 | headingDE2 | %d | 0 to 360 |Course over ground in centi-degrees |
 | horVelocityCMS | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
 | verVelocityCMS | %ld | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
@@ -236,19 +237,16 @@ There following table details the mandatory fields required per traffic source, 
 
 | Field Name | Data Type |
 | :--- | :--- |
-|1090ES | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
-| UAT | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
-| Multi-radar (MRT) | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
-| MLAT | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
-| SSR | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
-| PSR | 1. trafficSource <br> 2. latDD <br> 3. lonDD <br> 4. altitudeMM | 
-| Mode-S | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
-| MRT | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
-| SSR + PSR Fused | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
-| ADS-B | 1. icaoAddress <br> 2. trafficSource <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
-
-
-
+|1090ES | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp | 
+| UAT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
+| Multi-radar (MRT) | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM <br> 6. timeStamp | 
+| MLAT | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  | 
+| SSR | 1. trafficSource<br> 2. sourceType <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  | 
+| PSR | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
+| Mode-S | 1. icaoAddress <br> 2. trafficSource<br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
+| MRT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
+| SSR + PSR Fused | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp | 
+| ADS-B | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
 
 
 ## Appendix
