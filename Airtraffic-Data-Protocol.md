@@ -65,7 +65,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 				 "altitudeType":0,
 				 "callsign":"LEA022H ",
 				 "emitterType":2,
-				 "sourceGuid":"7541622b4f4c2e59",
+				 "sourceGUID":"7541622b4f4c2e59",
 				 "utcSync":1,
 				 "timeStamp":"2017-02-13T14:42:00.111Z",
 				 "processingDelay":"13106400",
@@ -104,7 +104,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 				 "verVelocityCMS":-32,
 				 "altitudeType":0,
 				 "emitterType":0,
-				 "sourceGuid":"7541622b4f4c2e59",
+				 "sourceGUID":"7541622b4f4c2e59",
 				 "utcSync":1,
 				 "timeStamp":"2017-02-13T14:41:57.189Z",
 				 "detail":{
@@ -137,7 +137,7 @@ All sensors should provide a status on its own health and basic information abou
 
 		{
 		"status": {
-		      "sourceGuid":"7541622b4f4c2e59", 
+		      "sourceGUID":"7541622b4f4c2e59", 
 		      "sourceVersionMajor":0, 
 		      "sourceVersionMinor":9, 
 		      "sourceVersionBuild":4, 
@@ -171,7 +171,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | emitterType | %d | 0-18 |Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
 | horVelocityCMS | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
 | sequenceNumber   | %d | 0 to 10000000 |Auto incrementing packet sequence number |
-| sourceGuid | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
+| sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
 | utcSync | %d | x |UTC time flag |
 | timeStamp | %s | YYYY-MM-DDTHH:mm:ss:ffffffffZ |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDTHH:mm:ss:ffffffffZ |
 | processingDelay | %d | 0-10000 |Delay in processing:  the difference when the data was received and published. In milli-seconds. |
@@ -219,7 +219,7 @@ A field called Detail can be added for extra information for each of the aircraf
 
 | Field Name | Data Type | Acceptable Values |Description |
 | :--- | :---: | :---: |:--- |
-| sourceGuid | %02x%02x%02x%02x %02x%02x%02x%02x | x | Unique Station identifier |
+| sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x | Unique Station identifier |
 | sourceVersionMajor | %d | x | SOURCE\_MAJOR\_VERSION |
 | sourceVersionMinor | %d | x |SOURCE\_MINOR\_VERSION |
 | sourceVersionBuild | %d | x | SOURCE\_BUILD\_VERSION |
