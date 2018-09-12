@@ -162,7 +162,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | latDD | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
 | lonDD | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
 | altitudeMM | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
-| headingDE2 | %d | 0 to 360 |Course over ground in centi-degrees |
+| headingDE2 | %d | 0 to 36000 |Course over ground in centi-degrees |
 | horVelocityCMS | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
 | verVelocityCMS | %ld | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
 | squawk | %d | x |Transponder code |
