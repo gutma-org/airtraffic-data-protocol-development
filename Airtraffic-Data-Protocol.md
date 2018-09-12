@@ -65,7 +65,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 				 "altitudeType":0,
 				 "callsign":"LEA022H ",
 				 "emitterType":2,
-				 "sourceGuid":"7541622b4f4c2e59",
+				 "sourceGUID":"7541622b4f4c2e59",
 				 "utcSync":1,
 				 "timeStamp":"2017-02-13T14:42:00.111Z",
 				 "processingDelay":"13106400",
@@ -104,7 +104,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 				 "verVelocityCMS":-32,
 				 "altitudeType":0,
 				 "emitterType":0,
-				 "sourceGuid":"7541622b4f4c2e59",
+				 "sourceGUID":"7541622b4f4c2e59",
 				 "utcSync":1,
 				 "timeStamp":"2017-02-13T14:41:57.189Z",
 				 "detail":{
@@ -137,7 +137,7 @@ All sensors should provide a status on its own health and basic information abou
 
 		{
 		"status": {
-		      "sourceGuid":"7541622b4f4c2e59", 
+		      "sourceGUID":"7541622b4f4c2e59", 
 		      "sourceVersionMajor":0, 
 		      "sourceVersionMinor":9, 
 		      "sourceVersionBuild":4, 
@@ -162,7 +162,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | latDD | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
 | lonDD | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
 | altitudeMM | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
-| headingDE2 | %d | 0 to 360 |Course over ground in centi-degrees |
+| headingDE2 | %d | 0 to 36000 |Course over ground in centi-degrees |
 | horVelocityCMS | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
 | verVelocityCMS | %ld | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
 | squawk | %d | x |Transponder code |
@@ -170,7 +170,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | callSign | %c%c%c%c %c%c%c%c | e.g. N905NA |Callsign |
 | emitterType | %d | 0-18 |Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
 | sequenceNumber   | %d | 0 to 10000000 |Auto incrementing packet sequence number |
-| sourceGuid | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
+| sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
 | utcSync | %d | x |UTC time flag |
 | timeStamp | %s | YYYY-MM-DDTHH:mm:ss:ffffffffZ |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDTHH:mm:ss:ffffffffZ |
 | processingDelay | %d | 0-10000 |Delay in processing:  the difference when the data was received and published. In milli-seconds. |
@@ -218,7 +218,7 @@ A field called Detail can be added for extra information for each of the aircraf
 
 | Field Name | Data Type | Acceptable Values |Description |
 | :--- | :---: | :---: |:--- |
-| sourceGuid | %02x%02x%02x%02x %02x%02x%02x%02x | x | Unique Station identifier |
+| sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x | Unique Station identifier |
 | sourceVersionMajor | %d | x | SOURCE\_MAJOR\_VERSION |
 | sourceVersionMinor | %d | x |SOURCE\_MINOR\_VERSION |
 | sourceVersionBuild | %d | x | SOURCE\_BUILD\_VERSION |
@@ -254,16 +254,18 @@ The objective of this section is to highlight some considerations for different 
 ### Data Verbosity
 It can be argued that the structure stated above produces a very verbose JSON. There are many tricks and techniques to compress JSON e.g. [protobuf](https://developers.google.com/protocol-buffers/) and ways to exchange protobuf e.g. [GPRC](https://grpc.io/docs/guides/) and others that already exist or will be developed in the future. However, verbosity is a consideration that must be taken into account given the frequency with which we expect this data to be updated (1 object per second). At this time (mid-2018) most of the sensors are ethernet-based with a MAC address associated with them. Since the sensor is ethernet based, bandwidth etc. is not a issue. So this section deals with a trade-off that we anticipate will have to be made as sensors evolve in the UTM ecosystem. We anticipate different type of sensors (ground, air bourne etc.) and different network and operating environments (e.g. ethernet, LTE, IoT, Bluetooth and others). These environments come with their own constraints and operating conditions and appropriate technical decisions need to be made. 
 
-A large object can be sent without having to worry about data limits, bandwidth etc. However, if the same data is sent over LTE or other IOT / low bandwidth environments the size of the object becomes a major problem. We anticipate in some cases the sensors will be airborne or the sensor will have a `data plan` associated with it. In such cases it maybe useful to limit the amount of data transmitted so as not to use up bandwidth and also for other reasons like clogging the network and conserving battery. We recommend that at the very least the following fields be transmitted by sensors in a low bandwidth environment. It must be noted that this is not a comprehensive list or a official recommendation.
+A large object can be sent without having to worry about data limits, bandwidth etc. However, if the same data is sent over LTE or other IOT / low bandwidth environments the size of the object becomes a major problem. We anticipate in some cases the sensors will be airborne or the sensor will have a `data plan` associated with it. In such cases it maybe useful to limit the amount of data transmitted so as not to use up bandwidth and also for other reasons like clogging the network and conserving battery. We recommend that at the very least, in such environments, the fields mentioned in [Traffic Source and Mandatory Fields](#traffic-source-and-mandatory-fields) section should be followed.
 
 
 ### Push vs Pull
-Similar to the considerations above, there are primarily two models that data can be transmitted, a user requests data from a sensor (pull) and a sensor emits it out over a public interface (push) regardless if someone is asking for it. We anticipate technical challenges when using either of these models in a sensor in the future. For e.g. in a pull model a interested party has to send a request through a HTTP POST or others to get a response with the air-traffic data. But how does one know how many sensors are around to make such queries (discovery). In a push model data is being emitted continuously over publicly documented interfaces so the interested parties have to tune their receivers on that interface to get data. At the moment apart from some protocols like ADS-B, FLARM etc. there is no standard way to sense and receive transmissions. We anticipate that sensor manufacturers will build interfaces unique to their device and there will not be any standard port (e.g. 22 for SSH) that all of them would agree on.
+Similar to the considerations above, there are primarily two modes that data can be transmitted, a user requests data from a sensor (pull) and a sensor emits it out over a public interface (push) regardless if someone is asking for it. We anticipate technical challenges when using either of these models in the future. For e.g. in a pull model a interested party has to send a request through a HTTPS POST or others to get a response from the sensor. But how does one know how many sensors are around in a geography to make such queries (discovery)?
+
+In a push model data is being emitted continuously over publicly documented interfaces so the interested parties have to tune their receivers on that interface to get data. At the moment apart from some protocols like ADS-B, FLARM etc. there is no standard way to sense and receive transmissions. In a `push` environment, there is a high chance of clogging the airspace with data if there are a number of sensors emitting it. We anticipate that sensor manufacturers will build interfaces unique to their device and there will not be any standard port (e.g. 22 for SSH) that all of them would agree on.
 
 Currently, a number of these sensors are connected over Ethernet so a PC, server or laptop's network discovery tools help in identifying and connecting to the sensor but in the future the network environment will play a important part in the transmission and delivery model.
 
 ### Full Object vs Deltas
-This protocol assumes that every data transmitted is a complete object that has all the flights in the airspace at that time. There is another chain of thought that is has some benefits, the transmission of deltas, i.e. only the changes to things. This type of data transmission is commonly used to efficiently transmit temporal data and comes with a number of benefits. For the purposes of this protocol, we will not consider this in scope, instead we rely on the sensor manufacturers to develop APIs and technologies to enable `delta` transmissions and queries. Most people prefer full verbose data transmission but as detailed earlier a verbose data feed may not be most suitable. A way forward in this situation especially with a scenario with limited bandwidth is to have a API available in the sensor that sends information as deltas via a API call and reduces the frequency at which the full data object is sent over the network. 
+This protocol assumes that every data transmitted is a complete object that has all the flights in the airspace at that time. There is another chain of thought that is has some benefits that need to considered: the transmission of deltas, i.e. only the changes to things. This type of data transmission is commonly used to efficiently transmit temporal data and comes with a number of benefits. For the purposes of this protocol, we will not consider this in scope, instead we rely on the sensor manufacturers to develop APIs and technologies to enable `delta` transmissions and queries. Full verbose data transmission capability is a must in a sensor so delta but as detailed earlier a verbose data feed may not be most suitable. A way forward in this situation especially with a scenario with limited bandwidth is to have a API available in the sensor that sends information as deltas via a API call and reduces the frequency at which the full data object is sent over the network. 
 
 ## Open Issues
 Currently there are a few open issues and they are tracked using the issues section in this repository, please open new issues if you want to comment or have concerns about the protocol, the key ones that address the appendix section above are below and your suggestions / contributions are welcome. Please add additional comments on the issue itself or suggest merge requests.
