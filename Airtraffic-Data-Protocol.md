@@ -169,7 +169,6 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | altitudeType | %d | 0-1 |Altitude Source <br>0 = Pressure <br> 1 = Geometric |
 | callSign | %c%c%c%c %c%c%c%c | e.g. N905NA |Callsign |
 | emitterType | %d | 0-18 |Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
-| horVelocityCMS | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
 | sequenceNumber   | %d | 0 to 10000000 |Auto incrementing packet sequence number |
 | sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
 | utcSync | %d | x |UTC time flag |
