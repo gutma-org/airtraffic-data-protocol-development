@@ -16,39 +16,39 @@
 		- [Full Object vs Deltas](#full-object-vs-deltas)
 	- [Open Issues](#open-issues)
 
-## Objective 
-As UTM moves into it's next phase of evolution, the challenges around integrating unmanned aviation with manned and other entities sharing the sky becomes critical. Air traffic data is sensed using different sensors and have different capabilities, technologies and data formats that need to be reconciled. Therefore the core objective of this reporting standard is the following: 
+## Objective
+As UTM moves into it's next phase of evolution, the challenges around integrating unmanned aviation with manned and other entities sharing the sky becomes critical. Air traffic data is sensed using different sensors and have different capabilities, technologies and data formats that need to be reconciled. Therefore the core objective of this reporting standard is the following:
 
 - Identify aircraft with high certainty
 - Minimize Latency, reduce bandwidth
 - Ensure quality and integrity of the data
-- Ability to merge different data sources into a single feed. 
+- Ability to merge different data sources into a single feed.
 
 ## Scope
 
-At the moment the scope of the document is limited to air traffic data. Following items are currently out of scope for this document and data feed: 
+At the moment the scope of the document is limited to air traffic data. Following items are currently out of scope for this document and data feed:
 
-- Dynamic geofencing 
+- Dynamic geofencing
 - No-fly zones
-- NOTAMs 
-- Weather reports 
+- NOTAMs
+- Weather reports
 
 ## Data Sources
-The following data sources are considered in scope for the purposes of this data feed: 
+The following data sources are considered in scope for the purposes of this data feed:
 
 - Aircraft equipped with sensors that detect and produce data (e.g. ADS-B  / Mode S / Primary Radar / Mode AC / FLARM / UAT)
 - Sensors from private companies / 1st level sensors detecting emitted data (e.g. OEM / Radar manufacturers / Sensor manufacturers)
 - UAS / Aircraft itself: In the future all drones will detect neighboring aircraft and share it (Traffic information service - broadcast (TIS-B) collects information and broadcasts it to any aircraft in the region)
 
 ## Stakeholders
-At this stage the document is primarily aimed at the following stakeholders who process or utilize this data. 
+At this stage the document is primarily aimed at the following stakeholders who process or utilize this data.
 
 - An entity that aggregates that information to provide a big picture. This could be a UAS Service Supplier, Air Navigation Service Provider or other aggregators  
-- 2nd level of aggregators that in turn send this data to the stakeholders listed above. 
+- 2nd level of aggregators that in turn send this data to the stakeholders listed above.
 
 
 ## Sample Traffic Object
-Below is a sample traffic object a 1st level sensor records. This object details information about two aircraft in the airspace: 
+Below is a sample traffic object a 1st level sensor records. This object details information about two aircraft in the airspace:
 
 		{
 		   "observations":[
@@ -133,26 +133,26 @@ Below is a sample traffic object a 1st level sensor records. This object details
 
 
 ## Sample Source status Object
-All sensors should provide a status on its own health and basic information about itself such as its location. The following JSON extract details an output on the health or service. The sensor can be online and made available via a API endpoint. 
+All sensors should provide a status on its own health and basic information about itself such as its location. The following JSON extract details an output on the health or service. The sensor can be online and made available via a API endpoint.
 
 		{
 		"status": {
-		      "sourceGUID":"7541622b4f4c2e59", 
-		      "sourceVersionMajor":0, 
-		      "sourceVersionMinor":9, 
-		      "sourceVersionBuild":4, 
+		      "sourceGUID":"7541622b4f4c2e59",
+		      "sourceVersionMajor":0,
+		      "sourceVersionMinor":9,
+		      "sourceVersionBuild":4,
 		      "timeStamp":"2017-02-13T14:42:00.18872Z",                
-		      "sourceLatDD":48.091530, 
-		      "sourceLonDD":-114.105026, 
+		      "sourceLatDD":48.091530,
+		      "sourceLonDD":-114.105026,
 		      "gpsStatus":3,
-		      "receiverStatus":0 
+		      "receiverStatus":0
 		      }
 		}
 
-## Data Specifications 
+## Data Specifications
 
 ### Traffic Object Details
-For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](#traffic-source-and-mandatory-fields) section. 
+For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](#traffic-source-and-mandatory-fields) section.
 
 | Field Name   | Data Type | Acceptable Value Range |Description |
 | :--- | :---: | :---| :--- |
@@ -172,7 +172,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | sequenceNumber   | %d | 0 to 10000000 |Auto incrementing packet sequence number |
 | sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
 | utcSync | %d | x |UTC time flag |
-| timeStamp | %s | YYYY-MM-DDTHH:mm:ss:ffffffffZ |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDTHH:mm:ss:ffffffffZ |
+| timeStamp | %s | YYYY-MM-DDThh:mm:ss.sss |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDThh:mm:ss.sss |
 | processingDelay | %d | 0-10000 |Delay in processing:  the difference when the data was received and published. In milli-seconds. |
 | estimatedErrorLat | %f | 0-0.1 |Estimated error in latitude in decimal degrees |
 | estimatedErrorLon | %f | 0-0.1 |Estimated error in longitude in decimal degrees |
@@ -183,7 +183,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 
 
 
-A field called Detail can be added for extra information for each of the aircraft object if avaialble. 
+A field called Detail can be added for extra information for each of the aircraft object if avaialble.
 
 | Field Name | Data Type | Acceptable Value Range |Description |
 | :--- | :---: |:--- |:--- |
@@ -232,27 +232,27 @@ A field called Detail can be added for extra information for each of the aircraf
 
 ## Traffic Source and Mandatory Fields
 
-There following table details the mandatory fields required per traffic source, this takes in to account the fact that not all traffic sources can provide all the data: 
+There following table details the mandatory fields required per traffic source, this takes in to account the fact that not all traffic sources can provide all the data:
 
 | Field Name | Data Type |
 | :--- | :--- |
-|1090ES | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp | 
-| UAT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
-| Multi-radar (MRT) | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM <br> 6. timeStamp | 
-| MLAT | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  | 
-| SSR | 1. trafficSource<br> 2. sourceType <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  | 
-| PSR | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM | 
-| Mode-S | 1. icaoAddress <br> 2. trafficSource<br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
-| MRT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
-| SSR + PSR Fused | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp | 
-| ADS-B | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  | 
+|1090ES | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp |
+| UAT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
+| Multi-radar (MRT) | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM <br> 6. timeStamp |
+| MLAT | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  |
+| SSR | 1. trafficSource<br> 2. sourceType <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  |
+| PSR | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM |
+| Mode-S | 1. icaoAddress <br> 2. trafficSource<br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
+| MRT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
+| SSR + PSR Fused | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp |
+| ADS-B | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
 
 
 ## Appendix
 The objective of this section is to highlight some considerations for different sensor manufacturers and others when implementing this system especially as the UTM ecosystem evolves.
 
 ### Data Verbosity
-It can be argued that the structure stated above produces a very verbose JSON. There are many tricks and techniques to compress JSON e.g. [protobuf](https://developers.google.com/protocol-buffers/) and ways to exchange protobuf e.g. [GPRC](https://grpc.io/docs/guides/) and others that already exist or will be developed in the future. However, verbosity is a consideration that must be taken into account given the frequency with which we expect this data to be updated (1 object per second). At this time (mid-2018) most of the sensors are ethernet-based with a MAC address associated with them. Since the sensor is ethernet based, bandwidth etc. is not a issue. So this section deals with a trade-off that we anticipate will have to be made as sensors evolve in the UTM ecosystem. We anticipate different type of sensors (ground, air bourne etc.) and different network and operating environments (e.g. ethernet, LTE, IoT, Bluetooth and others). These environments come with their own constraints and operating conditions and appropriate technical decisions need to be made. 
+It can be argued that the structure stated above produces a very verbose JSON. There are many tricks and techniques to compress JSON e.g. [protobuf](https://developers.google.com/protocol-buffers/) and ways to exchange protobuf e.g. [GPRC](https://grpc.io/docs/guides/) and others that already exist or will be developed in the future. However, verbosity is a consideration that must be taken into account given the frequency with which we expect this data to be updated (1 object per second). At this time (mid-2018) most of the sensors are ethernet-based with a MAC address associated with them. Since the sensor is ethernet based, bandwidth etc. is not a issue. So this section deals with a trade-off that we anticipate will have to be made as sensors evolve in the UTM ecosystem. We anticipate different type of sensors (ground, air bourne etc.) and different network and operating environments (e.g. ethernet, LTE, IoT, Bluetooth and others). These environments come with their own constraints and operating conditions and appropriate technical decisions need to be made.
 
 A large object can be sent without having to worry about data limits, bandwidth etc. However, if the same data is sent over LTE or other IOT / low bandwidth environments the size of the object becomes a major problem. We anticipate in some cases the sensors will be airborne or the sensor will have a `data plan` associated with it. In such cases it maybe useful to limit the amount of data transmitted so as not to use up bandwidth and also for other reasons like clogging the network and conserving battery. We recommend that at the very least, in such environments, the fields mentioned in [Traffic Source and Mandatory Fields](#traffic-source-and-mandatory-fields) section should be followed.
 
@@ -265,8 +265,7 @@ In a push model data is being emitted continuously over publicly documented inte
 Currently, a number of these sensors are connected over Ethernet so a PC, server or laptop's network discovery tools help in identifying and connecting to the sensor but in the future the network environment will play a important part in the transmission and delivery model.
 
 ### Full Object vs Deltas
-This protocol assumes that every data transmitted is a complete object that has all the flights in the airspace at that time. There is another chain of thought that is has some benefits that need to considered: the transmission of deltas, i.e. only the changes to things. This type of data transmission is commonly used to efficiently transmit temporal data and comes with a number of benefits. For the purposes of this protocol, we will not consider this in scope, instead we rely on the sensor manufacturers to develop APIs and technologies to enable `delta` transmissions and queries. Full verbose data transmission capability is a must in a sensor so delta but as detailed earlier a verbose data feed may not be most suitable. A way forward in this situation especially with a scenario with limited bandwidth is to have a API available in the sensor that sends information as deltas via a API call and reduces the frequency at which the full data object is sent over the network. 
+This protocol assumes that every data transmitted is a complete object that has all the flights in the airspace at that time. There is another chain of thought that is has some benefits that need to considered: the transmission of deltas, i.e. only the changes to things. This type of data transmission is commonly used to efficiently transmit temporal data and comes with a number of benefits. For the purposes of this protocol, we will not consider this in scope, instead we rely on the sensor manufacturers to develop APIs and technologies to enable `delta` transmissions and queries. Full verbose data transmission capability is a must in a sensor so delta but as detailed earlier a verbose data feed may not be most suitable. A way forward in this situation especially with a scenario with limited bandwidth is to have a API available in the sensor that sends information as deltas via a API call and reduces the frequency at which the full data object is sent over the network.
 
 ## Open Issues
 Currently there are a few open issues and they are tracked using the issues section in this repository, please open new issues if you want to comment or have concerns about the protocol, the key ones that address the appendix section above are below and your suggestions / contributions are welcome. Please add additional comments on the issue itself or suggest merge requests.
-
