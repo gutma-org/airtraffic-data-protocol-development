@@ -63,7 +63,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 				 "ver_velocity_cms":0,
 				 "squawk":1362,
 				 "altitude_type":0,
-				 "callsign":"LEA022H ",
+				 "call_sign":"LEA022H ",
 				 "emitter_type":2,
 				 "source_guid":"7541622b4f4c2e59",
 				 "utc_sync":1,
@@ -167,7 +167,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | ver_velocity_cms | %f | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
 | squawk | %d | x |Transponder code |
 | altitude_type | %d | 0-1 |Altitude Source <br>0 = Barometric <br> 1 = Geometric |
-| callSign | %c%c%c%c %c%c%c%c | e.g. N905NA |Callsign |
+| call_sign | %c%c%c%c %c%c%c%c | e.g. N905NA |call_sign |
 | emitter_type | %d | 0-18 |Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
 | sequenceNumber   | %d | 0 to 10000000 |Auto incrementing packet sequence number |
 | source_guid | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
@@ -211,7 +211,7 @@ A field called Detail can be added for extra information for each of the aircraf
 | transmit_mso | %d | 0-63 |the transmit_mso is the 6bit field from the transmitted UAT message which should signify which MSO the message was transmitted in. MSO&#39;s can range from 0 to 3951 but only transmit the 6 LSB&#39;s of the actual MSO if transmitted. Received range is from 0 - 63. |
 |address_qualifier | %d | 0-7 | Defines the type of target that delivered the data <br> 0 = ADS-B target with ICAO 24-bit <br> 1 = Reserved for National use <br> 2 = TIS-B target with ICAO 24-bit address <br> 3 = TIS-B target with track file identifier <br> 4 = Surface Vehicle <br> 5 = Fixed ADS-B Beacon <br> 6 = (Reserved) <br> 7 = (Reserved) |
 | uat_mops_version | %d | 1-2 |1 = DO-282A<br> 2 = DO-282B |
-| call_sign_id | %d | 0-1 |0 = Fightplan <br> 1 = CallSign |
+| call_sign_id | %d | 0-1 |0 = Fightplan <br> 1 = call_sign |
 
 
 ### Status Object Details
