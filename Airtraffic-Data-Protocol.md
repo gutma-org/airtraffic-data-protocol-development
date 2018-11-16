@@ -152,7 +152,8 @@ All sensors should provide a status on its own health and basic information abou
 		      "hardware_version":"0.0.1",
 		      "software_version":"0.0.1",
 		      "software_checksum":"73f48840b60ab6da68b03acd322445ee",
-			  "software_checksum_type":"0"
+			  "software_checksum_type":"0",
+			  "data_reporting_version":"1"
 
 		      }
 		}
@@ -242,6 +243,7 @@ A field called Detail can be added for extra information for each of the aircraf
 | hardware_version | %s | x |  A version number for the hardware |
 | software_checksum | %s | x |  A string that has the checksum for the software |
 | software_checksum_type | %d | 0-2 |  0 = MD5 <br> 1 = SHA-1 |
+| data_reporting_version | %d | x |  Version of the traffic data protocol that is being reported by this sensor |
 
 
 ## Traffic Source and Mandatory Fields
