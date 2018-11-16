@@ -161,10 +161,10 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | source_type | %d | 0-1 |0 = True <br> 1 = Fused <br>|
 | lat_dd | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
 | lon_dd | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
-| altitude_mm | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
+| altitude_mm | %f |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
 | heading_de2 | %d | 0 to 36000 |Course over ground in centi-degrees |
-| hor_velocity_cms | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
-| ver_velocity_cms | %ld | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
+| hor_velocity_cms | %f | 0 to 10000000 | Horizontal velocity in centimeters/sec |
+| ver_velocity_cms | %f | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
 | squawk | %d | x |Transponder code |
 | altitude_type | %d | 0-1 |Altitude Source <br>0 = Barometric <br> 1 = Geometric |
 | callSign | %c%c%c%c %c%c%c%c | e.g. N905NA |Callsign |
