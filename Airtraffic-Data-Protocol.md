@@ -53,79 +53,79 @@ Below is a sample traffic object a 1st level sensor records. This object details
 		{
 		   "observations":[
 			  {
-				 "icaoAddress":"39C812",
-				 "trafficSource":0,
-				 "latDD":47.538528,
-				 "lonDD":-115.133696,
-				 "altitudeMM":13106400,
-				 "headingDE2":203,
-				 "horVelocityCMS":23149,
-				 "verVelocityCMS":0,
+				 "icao_address":"39C812",
+				 "traffic_source":0,
+				 "lat_dd":47.538528,
+				 "lon_dd":-115.133696,
+				 "altitude_mm":13106400,
+				 "heading_de2":203,
+				 "hor_velocity_cms":23149,
+				 "ver_velocity_cms":0,
 				 "squawk":1362,
-				 "altitudeType":0,
+				 "altitude_type":0,
 				 "callsign":"LEA022H ",
-				 "emitterType":2,
-				 "sourceGUID":"7541622b4f4c2e59",
-				 "utcSync":1,
-				 "timeStamp":"2017-02-13T14:42:00.111Z",
-				 "processingDelay":"13106400",
-				 "EstimErrLat":"0.000008",
-				 "EstimErrLon":"0.000002",
-				 "EstimErrAlt":"2",
-				 "EstimErrHdg":"0.000002",
-				 "EstimErrHorVel":"3",
-				 "EstimErrVerVel":"1",
+				 "emitter_type":2,
+				 "source_guid":"7541622b4f4c2e59",
+				 "utc_sync":1,
+				 "time_stamp":"2017-02-13T14:42:00.111Z",
+				 "processing_delay":"13106400",
+				 "estimated_error_latitude":"0.000008",
+				 "estimated_error_longitude":"0.000002",
+				 "estimated_error_altitude":"2",
+				 "estimated_error_heading":"0.000002",
+				 "estimated_error_horizontal_velocity":"3",
+				 "estimated_error_vertical_velocity":"1",
 				 "detail":{
-					"navIntegrity":8,
-					"navAccuracy":2,
-					"verVelocitySrc":1,
-					"emergencyStatus":0,
-					"surveilStatus":0,
-					"baroaltDiffMM":0,
-					"sysIntegrityLevel":3,
-					"airGroundState":0,
-					"svHeadingType":0,
-					"verticalVelType":1,
-					"navPostionAccuracy":10,
-					"navVelocityAccuracy":2,
-					"navIntegrityBaro":1,
-					"tcasAcasOperating":1,
-					"tcasAcasAdvisory":0,
-					"identSwActive":0,
-					"magHeading":0,
-					"utcCoupledCondition":0
+					"navigation_integrity":8,
+					"navigation_accuracy":2,
+					"vertical_velocity_source":1,
+					"emergency_status":0,
+					"surveillance_status":0,
+					"barometric_altitude_difference_mm":0,
+					"system_integrity_level":3,
+					"air_ground_state":0,
+					"sv_heading_type":0,
+					"vertical_velocity_type":1,
+					"nav_position_accuracy":10,
+					"nav_velocity_accuracy":2,
+					"navigation_integrity_barometric":1,
+					"tcas_acas_operating":1,
+					"tcas_acas_advisory":0,
+					"ident_switch_active":0,
+					"magnetic_heading":0,
+					"utc_coupled_condition":0
 				 }
 			  },
 			  {
-				 "icaoAddress":"780A70",
-				 "trafficSource":0,
-				 "headingDE2":289,
-				 "horVelocityCMS":24127,
-				 "verVelocityCMS":-32,
-				 "altitudeType":0,
-				 "emitterType":0,
-				 "sourceGUID":"7541622b4f4c2e59",
-				 "utcSync":1,
-				 "timeStamp":"2017-02-13T14:41:57.189Z",
+				 "icao_address":"780A70",
+				 "traffic_source":0,
+				 "heading_de2":289,
+				 "hor_velocity_cms":24127,
+				 "ver_velocity_cms":-32,
+				 "altitude_type":0,
+				 "emitter_type":0,
+				 "source_guid":"7541622b4f4c2e59",
+				 "utc_sync":1,
+				 "time_stamp":"2017-02-13T14:41:57.189Z",
 				 "detail":{
-					"navIntegrity":0,
-					"navAccuracy":2,
-					"verVelocitySrc":0,
-					"emergencyStatus":0,
-					"surveilStatus":0,
-					"baroaltDiffMM":0,
-					"sysIntegrityLevel":0,
-					"airGroundState":0,
-					"svHeadingType":0,
-					"verticalVelType":0,
-					"navPostionAccuracy":0,
-					"navVelocityAccuracy":2,
-					"navIntegrityBaro":0,
-					"tcasAcasOperating":0,
-					"tcasAcasAdvisory":0,
-					"identSwActive":0,
-					"magHeading":0,
-					"utcCoupledCondition":0
+					"navigation_integrity":0,
+					"navigation_accuracy":2,
+					"vertical_velocity_source":0,
+					"emergency_status":0,
+					"surveillance_status":0,
+					"barometric_altitude_difference_mm":0,
+					"system_integrity_level":0,
+					"air_ground_state":0,
+					"sv_heading_type":0,
+					"vertical_velocity_type":0,
+					"nav_position_accuracy":0,
+					"nav_velocity_accuracy":2,
+					"navigation_integrity_barometric":0,
+					"tcas_acas_operating":0,
+					"tcas_acas_advisory":0,
+					"ident_switch_active":0,
+					"magnetic_heading":0,
+					"utc_coupled_condition":0
 				 }
 			  }
 		   ]
@@ -137,15 +137,15 @@ All sensors should provide a status on its own health and basic information abou
 
 		{
 		"status": {
-		      "sourceGUID":"7541622b4f4c2e59",
-		      "sourceVersionMajor":0,
-		      "sourceVersionMinor":9,
-		      "sourceVersionBuild":4,
-		      "timeStamp":"2017-02-13T14:42:00.18872Z",                
-		      "sourceLatDD":48.091530,
-		      "sourceLonDD":-114.105026,
-		      "gpsStatus":3,
-		      "receiverStatus":0
+		      "source_guid":"7541622b4f4c2e59",
+		      "source_version_major":0,
+		      "source_version_minor":9,
+		      "source_version_build":4,
+		      "time_stamp":"2017-02-13T14:42:00.18872Z",                
+		      "sourcelat_dd":48.091530,
+		      "sourcelon_dd":-114.105026,
+		      "gps_status":3,
+		      "receiver_status":0
 		      }
 		}
 
@@ -156,24 +156,24 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 
 | Field Name   | Data Type | Acceptable Value Range |Description |
 | :--- | :---: | :---| :--- |
-| icaoAddress | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
-| trafficSource | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
+| icao_address | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
+| traffic_source | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
 | sourceType | %d | 0-1 |0 = True <br> 1 = Fused <br>|
-| latDD | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
-| lonDD | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
-| altitudeMM | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
-| headingDE2 | %d | 0 to 36000 |Course over ground in centi-degrees |
-| horVelocityCMS | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
-| verVelocityCMS | %ld | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
+| lat_dd | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
+| lon_dd | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
+| altitude_mm | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
+| heading_de2 | %d | 0 to 36000 |Course over ground in centi-degrees |
+| hor_velocity_cms | %lu | 0 to 10000000 | Horizontal velocity in centimeters/sec |
+| ver_velocity_cms | %ld | 0 to 10000000 | Vertical velocity in centimeters/sec with positive being up |
 | squawk | %d | x |Transponder code |
-| altitudeType | %d | 0-1 |Altitude Source <br>0 = Barometric <br> 1 = Geometric |
+| altitude_type | %d | 0-1 |Altitude Source <br>0 = Barometric <br> 1 = Geometric |
 | callSign | %c%c%c%c %c%c%c%c | e.g. N905NA |Callsign |
-| emitterType | %d | 0-18 |Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
+| emitter_type | %d | 0-18 |Category type of the emitter <br> 0 = No aircraft type information <br> 1 = Light (ICAO) &lt; 15,500 lbs<br> 2 = Small - 15,500 to 75,000 lbs<br> 3 = Large - 75,000 to 300,000 lbs <br> 4 = High Vortex Large (e.g., B757)<br> 5 = Heavy (ICAO) - &gt; 300,000 lbs<br> 6 = Highly Maneuverable &gt; 5G acceleration and high speed<br> 7 = Rotocraft<br> 8 = Glider/sailplane<br> 9 = Lighter than air<br> 10 = Parachutist/sky diver<br> 11 = Ultra light/hang glider/paraglider<br> 12 = Unmanned aerial vehicle<br> 13 = Space/trans-atmospheric vehicle<br> 14 = Surface vehicle-emergency vehicle<br> 15 = Surface vehicle-service vehicle<br> 16 = Point Obstacle (includes tethered balloons)<br> 17 = Cluster Obstacle<br> 18 = Line Obstacle|
 | sequenceNumber   | %d | 0 to 10000000 |Auto incrementing packet sequence number |
-| sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
-| utcSync | %d | x |UTC time flag |
-| timeStamp | %s | YYYY-MM-DDThh:mm:ss.sss |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDThh:mm:ss.sss |
-| processingDelay | %d | 0-10000 |Delay in processing:  the difference when the data was received and published. In milli-seconds. |
+| source_guid | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
+| utc_sync | %d | x |UTC time flag |
+| time_stamp | %s | YYYY-MM-DDThh:mm:ss.sss |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDThh:mm:ss.sss |
+| processing_delay | %d | 0-10000 |Delay in processing:  the difference when the data was received and published. In milli-seconds. |
 | estimatedErrorLat | %f | 0-0.1 |Estimated error in latitude in decimal degrees |
 | estimatedErrorLon | %f | 0-0.1 |Estimated error in longitude in decimal degrees |
 | estimatedErrorAlt | %f | 0-1000 |Estimated error in Altitude in meters |
@@ -187,48 +187,48 @@ A field called Detail can be added for extra information for each of the aircraf
 
 | Field Name | Data Type | Acceptable Value Range |Description |
 | :--- | :---: |:--- |:--- |
-| navIntegrity | %d | 0-16 |Navigation integrity category (NIC) <br> 0  = RC &gt;=37.04 km (20 NM) Unknown Integrity <br> 1  = RC &lt; 37.04 km (20 NM) RNP-10 containment radius <br> 2  = RC &lt; 14.816 km (8 NM) RNP-4 containment radius <br> 3  = RC &lt; 7.408 km (4 NM) RNP-2 containment radius <br> 4  = RC &lt; 3.704 km (2 NM) RNP-1 containment radius <br> 5  = RC &lt; 1852 m (1 NM) RNP-0.5 containment radius <br> 6  = RC &lt; 1111.2 m (0.6 NM) RNP-0.3 containment radius <br> 7  = RC &lt; 370.4 m (0.2 NM) RNP-0.1 containment radius <br> 8  = RC &lt; 185.2 m (0.1 NM) RNP-0.05 containment radius <br> 9  = RC &lt; 75 m and VPL &lt; 112 m e.g., SBAS, HPL, VPL <br> 10 = RC &lt; 25 m and VPL &lt; 37.5 m e.g., SBAS, HPL, VPL <br> 11 = RC &lt; 7.5 m and VPL &lt; 11 m e.g., GBAS, HPL, VPL <br> 12 = (Reserved) (Reserved) <br> 13 = (Reserved) (Reserved) <br> 14 = (Reserved) (Reserved) <br> 15 = (Reserved) (Reserved) <br> 16 = (Reserved) (Reserved) |
-| navAccuracy | %d | 0-7 |Navigation accuracy category (NACv)  <br> 0 = Unknown or &gt;= 10 m/s Unknown &gt;= 50 feet (15.24 m) per second <br> 1 = &lt; 10 m/s  &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s < 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved) |
-| verVelocitySrc | %d | 0-1 |Vertical velocity source<br> 0 = Pressure <br> 1 = Geometric  |
-| emergencyStatus | %d | 0-6 |Emergency status <br> 0 = No-Emergency <br> 1 = General Emergency <br> 2 = Lifeguard/Medical <br> 3 = Min Fuel <br> 4 = No Comm <br> 5 = Unlawful Interference <br> 6 = Downed Aircraft |
-| sysIntegrityLevel | %d | x |System Integrity Level (SIL) |
-| airGroundState | %d | 0-2 |Airborne or ground <br> 0 = Airborne subsonic condition <br> 1 = Airborne supersonic condition <br> 2 = On ground condition |
-| svHeadingType | %d | 0-3 |Track angle from heading <br> 0 = Data Not Available <br> 2 = Magnetic Heading <br> 3 = True Heading |
-| verticalVelType | %d | 0-1 |Vertical rate information <br> 0 = Pressure <br> 1 = Geometric |
-| navPostionAccuracy | %d | 0-14 |The reported State Vector has sufficient position accuracy for the intended use (NACp) <br> 0  = EPU &gt;= 18.52 km (10 NM) <br> 1  = EPU &lt; 18.52 km (10 NM) <br> 2  = EPU &lt; 7.408 km (4 NM) <br> 3  = EPU &lt; 3.704 km (2 NM) <br> 4  = EPU &lt; 1852 m (1NM) <br> 5  = EPU &lt; 926 m (0.5 NM) <br> 6  = EPU &lt; 555.6 m (0.3 NM) <br> 7  = EPU &lt; 185.2 m (0.1 NM) <br> 8  = EPU &lt; 92.6 m (0.05 NM) <br> 9  = EPU &lt; 30 m and VEPU &lt; 45 m <br> 10 = EPU &lt; 10 m and VEPU &lt; 15 m <br> 11 = EPU &lt; 3 m and VEPU &lt; 4 m <br> 12 = (Reserved) <br> 13 = (Reserved) <br> 14 = (Reserved) <br> 15 = (Reserved) |
-| navVelocityAccuracy | %d | 0-7 |The least accurate velocity component being transmitted (NACv) <br> 0 = Unknown or &gt;= 10 m/s Unknown or &gt;= 50 feet (15.24 m) per second <br> 1 = &lt; 10 m/s &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s &lt; 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved)|
-| navIntegrityBaro | %d | 0-1 |Barometer checked (NICbaro) <br>0 = Barometric Pressure Altitude has NOT been cross checked <br>1 = Barometric Pressure Altitude has been cross checked |
-| tcasAcasOperating | %d | 0-1 |Aircraft is fitted with a TCAS (ACAS) computer and that computer is turned on and operating in a mode that can generate Resolution Advisory (RA) alerts <br> 0 - is not Fitted <br> 1 - is fitted with TCAS |
-| tcasAcasAdvisory | %d | 0-1 |TCAS II or ACAS computer is currently issuing a Resolution Advisory <br> 0 - Is not issuing advisory <br> 1  - is issuing advisort |
-| identSwActive | %d | 0-1 |Ident switch is activated <br> 0 - is not activated <br> 1- is activated |
+| navigation_integrity | %d | 0-16 |Navigation integrity category (NIC) <br> 0  = RC &gt;=37.04 km (20 NM) Unknown Integrity <br> 1  = RC &lt; 37.04 km (20 NM) RNP-10 containment radius <br> 2  = RC &lt; 14.816 km (8 NM) RNP-4 containment radius <br> 3  = RC &lt; 7.408 km (4 NM) RNP-2 containment radius <br> 4  = RC &lt; 3.704 km (2 NM) RNP-1 containment radius <br> 5  = RC &lt; 1852 m (1 NM) RNP-0.5 containment radius <br> 6  = RC &lt; 1111.2 m (0.6 NM) RNP-0.3 containment radius <br> 7  = RC &lt; 370.4 m (0.2 NM) RNP-0.1 containment radius <br> 8  = RC &lt; 185.2 m (0.1 NM) RNP-0.05 containment radius <br> 9  = RC &lt; 75 m and VPL &lt; 112 m e.g., SBAS, HPL, VPL <br> 10 = RC &lt; 25 m and VPL &lt; 37.5 m e.g., SBAS, HPL, VPL <br> 11 = RC &lt; 7.5 m and VPL &lt; 11 m e.g., GBAS, HPL, VPL <br> 12 = (Reserved) (Reserved) <br> 13 = (Reserved) (Reserved) <br> 14 = (Reserved) (Reserved) <br> 15 = (Reserved) (Reserved) <br> 16 = (Reserved) (Reserved) |
+| navigation_accuracy | %d | 0-7 |Navigation accuracy category (NACv)  <br> 0 = Unknown or &gt;= 10 m/s Unknown &gt;= 50 feet (15.24 m) per second <br> 1 = &lt; 10 m/s  &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s < 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved) |
+| vertical_velocity_source | %d | 0-1 |Vertical velocity source<br> 0 = Pressure <br> 1 = Geometric  |
+| emergency_status | %d | 0-6 |Emergency status <br> 0 = No-Emergency <br> 1 = General Emergency <br> 2 = Lifeguard/Medical <br> 3 = Min Fuel <br> 4 = No Comm <br> 5 = Unlawful Interference <br> 6 = Downed Aircraft |
+| system_integrity_level | %d | x |System Integrity Level (SIL) |
+| air_ground_state | %d | 0-2 |Airborne or ground <br> 0 = Airborne subsonic condition <br> 1 = Airborne supersonic condition <br> 2 = On ground condition |
+| sv_heading_type | %d | 0-3 |Track angle from heading <br> 0 = Data Not Available <br> 2 = Magnetic Heading <br> 3 = True Heading |
+| vertical_velocity_type | %d | 0-1 |Vertical rate information <br> 0 = Pressure <br> 1 = Geometric |
+| nav_position_accuracy | %d | 0-14 |The reported State Vector has sufficient position accuracy for the intended use (NACp) <br> 0  = EPU &gt;= 18.52 km (10 NM) <br> 1  = EPU &lt; 18.52 km (10 NM) <br> 2  = EPU &lt; 7.408 km (4 NM) <br> 3  = EPU &lt; 3.704 km (2 NM) <br> 4  = EPU &lt; 1852 m (1NM) <br> 5  = EPU &lt; 926 m (0.5 NM) <br> 6  = EPU &lt; 555.6 m (0.3 NM) <br> 7  = EPU &lt; 185.2 m (0.1 NM) <br> 8  = EPU &lt; 92.6 m (0.05 NM) <br> 9  = EPU &lt; 30 m and VEPU &lt; 45 m <br> 10 = EPU &lt; 10 m and VEPU &lt; 15 m <br> 11 = EPU &lt; 3 m and VEPU &lt; 4 m <br> 12 = (Reserved) <br> 13 = (Reserved) <br> 14 = (Reserved) <br> 15 = (Reserved) |
+| nav_velocity_accuracy | %d | 0-7 |The least accurate velocity component being transmitted (NACv) <br> 0 = Unknown or &gt;= 10 m/s Unknown or &gt;= 50 feet (15.24 m) per second <br> 1 = &lt; 10 m/s &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s &lt; 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved)|
+| navigation_integrity_barometric | %d | 0-1 |Barometer checked (NICbaro) <br>0 = Barometric Pressure Altitude has NOT been cross checked <br>1 = Barometric Pressure Altitude has been cross checked |
+| tcas_acas_operating | %d | 0-1 |Aircraft is fitted with a TCAS (ACAS) computer and that computer is turned on and operating in a mode that can generate Resolution Advisory (RA) alerts <br> 0 - is not Fitted <br> 1 - is fitted with TCAS |
+| tcas_acas_advisory | %d | 0-1 |TCAS II or ACAS computer is currently issuing a Resolution Advisory <br> 0 - Is not issuing advisory <br> 1  - is issuing advisort |
+| ident_switch_active | %d | 0-1 |Ident switch is activated <br> 0 - is not activated <br> 1- is activated |
 | atcServicesRecvd | %d | 0-1 |ATC pilot message mode setting <br> 0 = Not receiving ATC messages <br> 1 = Receiving ATC messages |
-| magHeading | %d | 0-1 |True north or magnetic north <br> 0 = True north <br> 1 = Magnetic north |
-| utcCoupledCondition | %d | 0-1 |Represents if the Ground Station is UTC-Coupled <br> 0 = Ground Station is not UTC coupled <br> 1 = Ground Station is UTC coupled |
-| surveilStatus | %d | 0-3 |Surveillance status <br> 0 = No Condition <br> 1 = permanent alert <br> 2 = temp alert <br> 3 = SPI |
-| secondaryAltType | %d | x |Altitude source <br> 0 = Pressure <br> 1 = Geometric |
-| secondaryAltitudeMM | %ld | 0-1000000 |Geometric altitude or barometric pressure altitude in millimeters |
-| tisBSiteId | %d | 0-1 | 0 - The tisBSiteId is unit-less and is from the a transmitted TISb UAT message signifies which uplink tower transmitted the TISb frame 1 - The tisBSiteId is not unit-less |
-| transmitMSO | %d | 0-63 |the transmitMSO is the 6bit field from the transmitted UAT message which should signify which MSO the message was transmitted in. MSO&#39;s can range from 0 to 3951 but only transmit the 6 LSB&#39;s of the actual MSO if transmitted. Received range is from 0 - 63. |
-|addressQualifier | %d | 0-7 | Defines the type of target that delivered the data <br> 0 = ADS-B target with ICAO 24-bit <br> 1 = Reserved for National use <br> 2 = TIS-B target with ICAO 24-bit address <br> 3 = TIS-B target with track file identifier <br> 4 = Surface Vehicle <br> 5 = Fixed ADS-B Beacon <br> 6 = (Reserved) <br> 7 = (Reserved) |
-| uatMopsVersion | %d | 1-2 |1 = DO-282A<br> 2 = DO-282B |
-| callSignID | %d | 0-1 |0 = Fightplan <br> 1 = CallSign |
+| magnetic_heading | %d | 0-1 |True north or magnetic north <br> 0 = True north <br> 1 = Magnetic north |
+| utc_coupled_condition | %d | 0-1 |Represents if the Ground Station is UTC-Coupled <br> 0 = Ground Station is not UTC coupled <br> 1 = Ground Station is UTC coupled |
+| surveillance_status | %d | 0-3 |Surveillance status <br> 0 = No Condition <br> 1 = permanent alert <br> 2 = temp alert <br> 3 = SPI |
+| secondary_altitude_type | %d | x |Altitude source <br> 0 = Pressure <br> 1 = Geometric |
+| secondary_altitude_mm | %ld | 0-1000000 |Geometric altitude or barometric pressure altitude in millimeters |
+| tisb_site_id | %d | 0-1 | 0 - The tisb_site_id is unit-less and is from the a transmitted TISb UAT message signifies which uplink tower transmitted the TISb frame 1 - The tisb_site_id is not unit-less |
+| transmit_mso | %d | 0-63 |the transmit_mso is the 6bit field from the transmitted UAT message which should signify which MSO the message was transmitted in. MSO&#39;s can range from 0 to 3951 but only transmit the 6 LSB&#39;s of the actual MSO if transmitted. Received range is from 0 - 63. |
+|address_qualifier | %d | 0-7 | Defines the type of target that delivered the data <br> 0 = ADS-B target with ICAO 24-bit <br> 1 = Reserved for National use <br> 2 = TIS-B target with ICAO 24-bit address <br> 3 = TIS-B target with track file identifier <br> 4 = Surface Vehicle <br> 5 = Fixed ADS-B Beacon <br> 6 = (Reserved) <br> 7 = (Reserved) |
+| uat_mops_version | %d | 1-2 |1 = DO-282A<br> 2 = DO-282B |
+| call_sign_id | %d | 0-1 |0 = Fightplan <br> 1 = CallSign |
 
 
 ### Status Object Details
 
 | Field Name | Data Type | Acceptable Values |Description |
 | :--- | :---: | :---: |:--- |
-| sourceGUID | %02x%02x%02x%02x %02x%02x%02x%02x | x | Unique Station identifier |
-| sourceVersionMajor | %d | x | SOURCE\_MAJOR\_VERSION |
-| sourceVersionMinor | %d | x |SOURCE\_MINOR\_VERSION |
-| sourceVersionBuild | %d | x | SOURCE\_BUILD\_VERSION |
-| timeStamp | %s | ISO | Time packet was received at the sourceStation ISO 8601 format |
-| sourceLatDD | %f | -180.00 to 180.00 | Fixed station latitude expressed as decimal degrees |
-| sourceLonDD | %f | -180.00 to 180.00 |Fixed station longitude expressed as decimal degrees |
-| sourceAltType | %d | 0-1 | 0 = Barometric Altitude 1 = GNSS Altitude |
-| sourceAltMM | %d | 0-1000000 |  Altitude in mm |
-| gpsStatus | %d | 0-4 |The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
-| receiverStatus | %d | 0-2 | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
+| source_guid | %02x%02x%02x%02x %02x%02x%02x%02x | x | Unique Station identifier |
+| source_version_major | %d | x | SOURCE\_MAJOR\_VERSION |
+| source_version_minor | %d | x |SOURCE\_MINOR\_VERSION |
+| source_version_build | %d | x | SOURCE\_BUILD\_VERSION |
+| time_stamp | %s | ISO | Time packet was received at the sourceStation ISO 8601 format |
+| sourcelat_dd | %f | -180.00 to 180.00 | Fixed station latitude expressed as decimal degrees |
+| sourcelon_dd | %f | -180.00 to 180.00 |Fixed station longitude expressed as decimal degrees |
+| source_altitude_type | %d | 0-1 | 0 = Barometric Altitude 1 = GNSS Altitude |
+| source_altitude_mm | %d | 0-1000000 |  Altitude in mm |
+| gps_status | %d | 0-4 |The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
+| receiver_status | %d | 0-2 | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
 
 ## Traffic Source and Mandatory Fields
 
@@ -236,16 +236,16 @@ There following table details the mandatory fields required per traffic source, 
 
 | Field Name | Data Type |
 | :--- | :--- |
-|1090ES | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp |
-| UAT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
-| Multi-radar (MRT) | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM <br> 6. timeStamp |
-| MLAT | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  |
-| SSR | 1. trafficSource<br> 2. sourceType <br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM<br> 6. timeStamp  |
-| PSR | 1. trafficSource <br> 2. sourceType<br> 3. latDD <br> 4. lonDD <br> 5. altitudeMM |
-| Mode-S | 1. icaoAddress <br> 2. trafficSource<br> 3. sourceType <br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
-| MRT | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
-| SSR + PSR Fused | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM <br> 7. timeStamp |
-| ADS-B | 1. icaoAddress <br> 2. trafficSource <br> 3. sourceType<br> 4. latDD <br> 5. lonDD <br> 6. altitudeMM<br> 7. timeStamp  |
+|1090ES | 1. icao_address <br> 2. traffic_source <br> 3. sourceType <br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm <br> 7. time_stamp |
+| UAT | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
+| Multi-radar (MRT) | 1. traffic_source <br> 2. sourceType<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm <br> 6. time_stamp |
+| MLAT | 1. traffic_source <br> 2. sourceType<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm<br> 6. time_stamp  |
+| SSR | 1. traffic_source<br> 2. sourceType <br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm<br> 6. time_stamp  |
+| PSR | 1. traffic_source <br> 2. sourceType<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm |
+| Mode-S | 1. icao_address <br> 2. traffic_source<br> 3. sourceType <br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
+| MRT | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
+| SSR + PSR Fused | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm <br> 7. time_stamp |
+| ADS-B | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
 
 
 ## Appendix
