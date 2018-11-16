@@ -206,7 +206,7 @@ A field called Detail can be added for extra information for each of the aircraf
 | utc_coupled_condition | %d | 0-1 |Represents if the Ground Station is UTC-Coupled <br> 0 = Ground Station is not UTC coupled <br> 1 = Ground Station is UTC coupled |
 | surveillance_status | %d | 0-3 |Surveillance status <br> 0 = No Condition <br> 1 = permanent alert <br> 2 = temp alert <br> 3 = SPI |
 | secondary_altitude_type | %d | x |Altitude source <br> 0 = Pressure <br> 1 = Geometric |
-| secondary_altitude_mm | %ld | 0-1000000 |Geometric altitude or barometric pressure altitude in millimeters |
+| secondary_altitude_mm | %f | 0-1000000 |Geometric altitude or barometric pressure altitude in millimeters |
 | tisb_site_id | %d | 0-1 | 0 - The tisb_site_id is unit-less and is from the a transmitted TISb UAT message signifies which uplink tower transmitted the TISb frame 1 - The tisb_site_id is not unit-less |
 | transmit_mso | %d | 0-63 |the transmit_mso is the 6bit field from the transmitted UAT message which should signify which MSO the message was transmitted in. MSO&#39;s can range from 0 to 3951 but only transmit the 6 LSB&#39;s of the actual MSO if transmitted. Received range is from 0 - 63. |
 |address_qualifier | %d | 0-7 | Defines the type of target that delivered the data <br> 0 = ADS-B target with ICAO 24-bit <br> 1 = Reserved for National use <br> 2 = TIS-B target with ICAO 24-bit address <br> 3 = TIS-B target with track file identifier <br> 4 = Surface Vehicle <br> 5 = Fixed ADS-B Beacon <br> 6 = (Reserved) <br> 7 = (Reserved) |
