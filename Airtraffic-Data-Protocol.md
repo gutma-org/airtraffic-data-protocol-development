@@ -151,6 +151,8 @@ All sensors should provide a status on its own health and basic information abou
 		      "receiver_status":0,
 		      "hardware_version":"0.0.1",
 		      "software_version":"0.0.1",
+		      "software_checksum":"73f48840b60ab6da68b03acd322445ee",
+			  "software_checksum_type":"0"
 
 		      }
 		}
@@ -236,7 +238,11 @@ A field called Detail can be added for extra information for each of the aircraf
 | gps_status | %d | 0-4 |The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
 | receiver_status | %d | 0-2 | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
 | hardware_version | %s | x |  A version number for the hardware |
-| source_altitude_mm | %s | x |  A version number for software |
+| receiver_status | %d | 0-2 | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
+| hardware_version | %s | x |  A version number for the hardware |
+| software_checksum | %s | x |  A string that has the checksum for the software |
+| software_checksum_type | %d | 0-2 |  0 = MD5 <br> 1 = SHA-1 |
+
 
 ## Traffic Source and Mandatory Fields
 
