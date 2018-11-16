@@ -158,7 +158,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | :--- | :---: | :---| :--- |
 | icao_address | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
 | traffic_source | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
-| sourceType | %d | 0-1 |0 = True <br> 1 = Fused <br>|
+| source_type | %d | 0-1 |0 = True <br> 1 = Fused <br>|
 | lat_dd | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
 | lon_dd | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
 | altitude_mm | %ld |  0 to 10058400 |Geometric altitude or barometric pressure altitude in millimeters |
@@ -236,16 +236,16 @@ There following table details the mandatory fields required per traffic source, 
 
 | Field Name | Data Type |
 | :--- | :--- |
-|1090ES | 1. icao_address <br> 2. traffic_source <br> 3. sourceType <br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm <br> 7. time_stamp |
-| UAT | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
-| Multi-radar (MRT) | 1. traffic_source <br> 2. sourceType<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm <br> 6. time_stamp |
-| MLAT | 1. traffic_source <br> 2. sourceType<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm<br> 6. time_stamp  |
-| SSR | 1. traffic_source<br> 2. sourceType <br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm<br> 6. time_stamp  |
-| PSR | 1. traffic_source <br> 2. sourceType<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm |
-| Mode-S | 1. icao_address <br> 2. traffic_source<br> 3. sourceType <br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
-| MRT | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
-| SSR + PSR Fused | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm <br> 7. time_stamp |
-| ADS-B | 1. icao_address <br> 2. traffic_source <br> 3. sourceType<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
+|1090ES | 1. icao_address <br> 2. traffic_source <br> 3. source_type <br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm <br> 7. time_stamp |
+| UAT | 1. icao_address <br> 2. traffic_source <br> 3. source_type<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
+| Multi-radar (MRT) | 1. traffic_source <br> 2. source_type<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm <br> 6. time_stamp |
+| MLAT | 1. traffic_source <br> 2. source_type<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm<br> 6. time_stamp  |
+| SSR | 1. traffic_source<br> 2. source_type <br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm<br> 6. time_stamp  |
+| PSR | 1. traffic_source <br> 2. source_type<br> 3. lat_dd <br> 4. lon_dd <br> 5. altitude_mm |
+| Mode-S | 1. icao_address <br> 2. traffic_source<br> 3. source_type <br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
+| MRT | 1. icao_address <br> 2. traffic_source <br> 3. source_type<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
+| SSR + PSR Fused | 1. icao_address <br> 2. traffic_source <br> 3. source_type<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm <br> 7. time_stamp |
+| ADS-B | 1. icao_address <br> 2. traffic_source <br> 3. source_type<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
 
 
 ## Appendix
