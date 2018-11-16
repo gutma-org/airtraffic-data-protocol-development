@@ -86,7 +86,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 					"air_ground_state":0,
 					"sv_heading_type":0,
 					"vertical_velocity_type":1,
-					"nav_position_accuracy":10,
+					"navigation_position_accuracy":10,
 					"nav_velocity_accuracy":2,
 					"navigation_integrity_barometric":1,
 					"tcas_acas_operating":1,
@@ -118,7 +118,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 					"air_ground_state":0,
 					"sv_heading_type":0,
 					"vertical_velocity_type":0,
-					"nav_position_accuracy":0,
+					"navigation_position_accuracy":0,
 					"nav_velocity_accuracy":2,
 					"navigation_integrity_barometric":0,
 					"tcas_acas_operating":0,
@@ -174,12 +174,12 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | utc_sync | %d | x |UTC time flag |
 | time_stamp | %s | YYYY-MM-DDThh:mm:ss.sss |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDThh:mm:ss.sss |
 | processing_delay | %d | 0-10000 |Delay in processing:  the difference when the data was received and published. In milli-seconds. |
-| estimatedErrorLat | %f | 0-0.1 |Estimated error in latitude in decimal degrees |
-| estimatedErrorLon | %f | 0-0.1 |Estimated error in longitude in decimal degrees |
-| estimatedErrorAlt | %f | 0-1000 |Estimated error in Altitude in meters |
-| estimatedErrorHdg | %f | 0-0.1 |Estimated Error in Heading in decimal degrees |
-| estimatedErrorVel | %d | 0-1000 |Estimated error in Velocity |
-| estimatedErrorVerVel | %d | 0-1000 |Estimated error in Vertical Velocity |
+| estimated_error_latitude | %f | 0-0.1 |Estimated error in latitude in decimal degrees |
+| estimated_error_longitude | %f | 0-0.1 |Estimated error in longitude in decimal degrees |
+| estimated_error_altitude | %f | 0-1000 |Estimated error in Altitude in meters |
+| estimated_error_heading | %f | 0-0.1 |Estimated Error in Heading in decimal degrees |
+| estimated_error_velocity | %d | 0-1000 |Estimated error in Velocity |
+| estimated_error_vertical_velocity | %d | 0-1000 |Estimated error in Vertical Velocity |
 
 
 
@@ -195,13 +195,13 @@ A field called Detail can be added for extra information for each of the aircraf
 | air_ground_state | %d | 0-2 |Airborne or ground <br> 0 = Airborne subsonic condition <br> 1 = Airborne supersonic condition <br> 2 = On ground condition |
 | sv_heading_type | %d | 0-3 |Track angle from heading <br> 0 = Data Not Available <br> 2 = Magnetic Heading <br> 3 = True Heading |
 | vertical_velocity_type | %d | 0-1 |Vertical rate information <br> 0 = Pressure <br> 1 = Geometric |
-| nav_position_accuracy | %d | 0-14 |The reported State Vector has sufficient position accuracy for the intended use (NACp) <br> 0  = EPU &gt;= 18.52 km (10 NM) <br> 1  = EPU &lt; 18.52 km (10 NM) <br> 2  = EPU &lt; 7.408 km (4 NM) <br> 3  = EPU &lt; 3.704 km (2 NM) <br> 4  = EPU &lt; 1852 m (1NM) <br> 5  = EPU &lt; 926 m (0.5 NM) <br> 6  = EPU &lt; 555.6 m (0.3 NM) <br> 7  = EPU &lt; 185.2 m (0.1 NM) <br> 8  = EPU &lt; 92.6 m (0.05 NM) <br> 9  = EPU &lt; 30 m and VEPU &lt; 45 m <br> 10 = EPU &lt; 10 m and VEPU &lt; 15 m <br> 11 = EPU &lt; 3 m and VEPU &lt; 4 m <br> 12 = (Reserved) <br> 13 = (Reserved) <br> 14 = (Reserved) <br> 15 = (Reserved) |
+| navigation_position_accuracy | %d | 0-14 |The reported State Vector has sufficient position accuracy for the intended use (NACp) <br> 0  = EPU &gt;= 18.52 km (10 NM) <br> 1  = EPU &lt; 18.52 km (10 NM) <br> 2  = EPU &lt; 7.408 km (4 NM) <br> 3  = EPU &lt; 3.704 km (2 NM) <br> 4  = EPU &lt; 1852 m (1NM) <br> 5  = EPU &lt; 926 m (0.5 NM) <br> 6  = EPU &lt; 555.6 m (0.3 NM) <br> 7  = EPU &lt; 185.2 m (0.1 NM) <br> 8  = EPU &lt; 92.6 m (0.05 NM) <br> 9  = EPU &lt; 30 m and VEPU &lt; 45 m <br> 10 = EPU &lt; 10 m and VEPU &lt; 15 m <br> 11 = EPU &lt; 3 m and VEPU &lt; 4 m <br> 12 = (Reserved) <br> 13 = (Reserved) <br> 14 = (Reserved) <br> 15 = (Reserved) |
 | nav_velocity_accuracy | %d | 0-7 |The least accurate velocity component being transmitted (NACv) <br> 0 = Unknown or &gt;= 10 m/s Unknown or &gt;= 50 feet (15.24 m) per second <br> 1 = &lt; 10 m/s &lt; 50 feet (15.24 m) per second <br> 2 = &lt; 3 m/s &lt; 15 feet (4.57 m) per second <br> 3 = &lt; 1 m/s &lt; 5 feet (1.52 m) per second <br> 4 = &lt; 0.3 m/s &lt; 1.5 feet (0.46 m) per second <br> 5 = (Reserved) (Reserved) <br> 6 = (Reserved) (Reserved) <br> 7 = (Reserved) (Reserved)|
 | navigation_integrity_barometric | %d | 0-1 |Barometer checked (NICbaro) <br>0 = Barometric Pressure Altitude has NOT been cross checked <br>1 = Barometric Pressure Altitude has been cross checked |
 | tcas_acas_operating | %d | 0-1 |Aircraft is fitted with a TCAS (ACAS) computer and that computer is turned on and operating in a mode that can generate Resolution Advisory (RA) alerts <br> 0 - is not Fitted <br> 1 - is fitted with TCAS |
 | tcas_acas_advisory | %d | 0-1 |TCAS II or ACAS computer is currently issuing a Resolution Advisory <br> 0 - Is not issuing advisory <br> 1  - is issuing advisort |
 | ident_switch_active | %d | 0-1 |Ident switch is activated <br> 0 - is not activated <br> 1- is activated |
-| atcServicesRecvd | %d | 0-1 |ATC pilot message mode setting <br> 0 = Not receiving ATC messages <br> 1 = Receiving ATC messages |
+| atc_services_received | %d | 0-1 |ATC pilot message mode setting <br> 0 = Not receiving ATC messages <br> 1 = Receiving ATC messages |
 | magnetic_heading | %d | 0-1 |True north or magnetic north <br> 0 = True north <br> 1 = Magnetic north |
 | utc_coupled_condition | %d | 0-1 |Represents if the Ground Station is UTC-Coupled <br> 0 = Ground Station is not UTC coupled <br> 1 = Ground Station is UTC coupled |
 | surveillance_status | %d | 0-3 |Surveillance status <br> 0 = No Condition <br> 1 = permanent alert <br> 2 = temp alert <br> 3 = SPI |
