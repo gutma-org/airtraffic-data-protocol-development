@@ -142,8 +142,11 @@ All sensors should provide a status on its own health and basic information abou
 		      "source_version_minor":9,
 		      "source_version_build":4,
 		      "time_stamp":"2017-02-13T14:42:00.18872Z",                
-		      "sourcelat_dd":48.091530,
-		      "sourcelon_dd":-114.105026,
+		      "source_latitude_dd":48.091530,
+		      "source_longitude_dd":-114.105026,
+		      "source_latitude_dd":48.091530,
+		      "source_altitude_mm":13106400,
+			  "source_altitude_type":0,
 		      "gps_status":3,
 		      "receiver_status":0,
 		      "hardware_version":"0.0.1",
@@ -226,8 +229,8 @@ A field called Detail can be added for extra information for each of the aircraf
 | source_version_minor | %d | x |SOURCE\_MINOR\_VERSION |
 | source_version_build | %d | x | SOURCE\_BUILD\_VERSION |
 | time_stamp | %s | ISO | Time packet was received at the sourceStation ISO 8601 format |
-| sourcelat_dd | %f | -180.00 to 180.00 | Fixed station latitude expressed as decimal degrees |
-| sourcelon_dd | %f | -180.00 to 180.00 |Fixed station longitude expressed as decimal degrees |
+| source_latitude_dd | %f | -180.00 to 180.00 | Fixed station latitude expressed as decimal degrees |
+| source_longitude_dd | %f | -180.00 to 180.00 |Fixed station longitude expressed as decimal degrees |
 | source_altitude_type | %d | 0-1 | 0 = Barometric Altitude 1 = GNSS Altitude |
 | source_altitude_mm | %d | 0-1000000 |  Altitude in mm |
 | gps_status | %d | 0-4 |The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
