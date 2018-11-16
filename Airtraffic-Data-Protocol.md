@@ -145,7 +145,10 @@ All sensors should provide a status on its own health and basic information abou
 		      "sourcelat_dd":48.091530,
 		      "sourcelon_dd":-114.105026,
 		      "gps_status":3,
-		      "receiver_status":0
+		      "receiver_status":0,
+		      "hardware_version":"0.0.1",
+		      "software_version":"0.0.1",
+
 		      }
 		}
 
@@ -229,6 +232,8 @@ A field called Detail can be added for extra information for each of the aircraf
 | source_altitude_mm | %d | 0-1000000 |  Altitude in mm |
 | gps_status | %d | 0-4 |The communication and health status of the source GPS <br> 0 = GPS not present or functioning <br> 1 = Not locked <br> 2 = 2D fix <br> 3 = 3D fix <br> 4 = DGPS fix |
 | receiver_status | %d | 0-2 | The communication and health status of the sourceStation receiver <br> 0 = functioning normally <br> 1 = excessive communication errors <br> 2 = device not transmitting |
+| hardware_version | %s | x |  A version number for the hardware |
+| source_altitude_mm | %s | x |  A version number for software |
 
 ## Traffic Source and Mandatory Fields
 
