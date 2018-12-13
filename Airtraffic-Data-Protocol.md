@@ -136,7 +136,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 All sensors should provide a status on its own health and basic information about itself such as its location. The following JSON extract details an output on the health or service. The sensor can be online and made available via a API endpoint.
 
 		{
-		"status": {
+		"status": {	
 		      "source_guid":"7541622b4f4c2e59",
 		      "source_version_major":0,
 		      "source_version_minor":9,
@@ -166,7 +166,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | Field Name   | Data Type | Acceptable Value Range |Description |
 | :--- | :---: | :---| :--- |
 | icao_address | %02X%02X%02X | e.g. AC82EC  |ICAO 24-bit address |
-| traffic_source | %d | 0-9 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B|
+| traffic_source | %d | 0-10 |0 = 1090ES <br> 1 = UAT <br> 2 = Multi-radar (MRT)<br> 3 = MLAT<br> 4 = SSR<br> 5 = PSR<br> 6 = Mode-S<br> 7 = MRT<br> 8 = SSR + PSR Fused<br> 9 = ADS-B<br> 10 = FLARM|
 | source_type | %d | 0-1 |0 = True <br> 1 = Fused <br>|
 | lat_dd | %f | -180 to 180 degrees |Latitude expressed as decimal degrees |
 | lon_dd | %f |  -180 to 180 degrees |Longitude expressed as decimal degrees |
