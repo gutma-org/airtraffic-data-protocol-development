@@ -250,7 +250,7 @@ A field called Detail can be added for extra information for each of the aircraf
 
 There following table details the mandatory fields required per traffic source, this takes in to account the fact that not all traffic sources can provide all the data:
 
-| Field Name | Data Type |
+| Traffic Source | Mandatory Fields |
 | :--- | :--- |
 |1090ES | 1. icao_address <br> 2. traffic_source <br> 3. source_type <br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm <br> 7. time_stamp |
 | UAT | 1. icao_address <br> 2. traffic_source <br> 3. source_type<br> 4. lat_dd <br> 5. lon_dd <br> 6. altitude_mm<br> 7. time_stamp  |
