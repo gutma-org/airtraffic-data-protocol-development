@@ -68,6 +68,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 				 "source_guid":"7541622b4f4c2e59",
 				 "utc_sync":1,
 				 "time_stamp":"2017-02-13T14:42:00.111Z",
+				 "measurement_time_stamp":"2017-02-13T14:42:00.111Z",
 				 "processing_delay":"13106400",
 				 "estimated_error_latitude":"0.000008",
 				 "estimated_error_longitude":"0.000002",
@@ -107,6 +108,7 @@ Below is a sample traffic object a 1st level sensor records. This object details
 				 "source_guid":"7541622b4f4c2e59",
 				 "utc_sync":1,
 				 "time_stamp":"2017-02-13T14:41:57.189Z",
+				 "measurement_time_stamp":"2017-02-13T14:41:57.189Z",
 				 "detail":{
 					"navigation_integrity":0,
 					"navigation_accuracy":2,
@@ -182,6 +184,7 @@ For mandatory fields, please refer to the [Traffic Source and Mandatory Fields](
 | source_guid | %02x%02x%02x%02x %02x%02x%02x%02x | x |Unique source/equipment Identifier |
 | utc_sync | %d | x |UTC time flag |
 | time_stamp | %s | YYYY-MM-DDThh:mm:ss.sss |Time packet was received at the sourceStation ISO 8601 format: YYYY-MM-DDThh:mm:ss.sss |
+| measurement_time_stamp | %s | YYYY-MM-DDThh:mm:ss.sss | Time observation was recorded / detected	 at the sourceStation ISO 8601 format:  YYYY-MM-DDThh:mm:ss.sss |
 | processing_delay | %d | 0-10000 |Delay in processing:  the difference when the data was received and published. In milli-seconds. |
 | estimated_error_latitude | %f | 0-0.1 |Estimated error in latitude in decimal degrees |
 | estimated_error_longitude | %f | 0-0.1 |Estimated error in longitude in decimal degrees |
